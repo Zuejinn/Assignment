@@ -7,140 +7,150 @@
     tools:context=".NewRaffle">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="< Back"
+        android:text="@string/BackBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/lblTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Raffle App"
+        android:text="@string/Title"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/inputRaffleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Raffle Name"
+        android:text="@string/EnterRaffleName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="102dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/inputTickets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="0"
+        android:text="@string/Zero"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="466dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.733" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/inputMaximum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="0"
+        android:text="@string/Zero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="596dp" />
+        app:layout_constraintTop_toBottomOf="@+id/inputTickets" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/lblTickets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tickets Per Person (0 for Unlimited)"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2" />
+        android:text="@string/lblTicketsText"
+        app:layout_constraintBottom_toTopOf="@+id/inputTickets"
+        app:layout_constraintStart_toStartOf="@+id/inputTickets" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/lblMaximum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Maximum Tickets (0 for Unlimited)"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
-        app:layout_constraintStart_toStartOf="@+id/editText3" />
+        android:text="@string/lblMaximumText"
+        app:layout_constraintBottom_toTopOf="@+id/inputMaximum"
+        app:layout_constraintStart_toStartOf="@+id/inputMaximum" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirm"
+        android:text="@string/btnConfirmText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/switchMargin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Margin"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="184dp" />
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="192dp"
+        android:text="@string/Margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/inputMarginMin"
         android:layout_width="80dp"
         android:layout_height="50dp"
+        android:layout_marginTop="248dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/editText7"
+        app:layout_constraintEnd_toStartOf="@+id/inputMarginMax"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="249dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/inputMarginMax"
         android:layout_width="85dp"
         android:layout_height="49dp"
         android:ems="10"
         android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/inputMarginMin"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/lblPossibleTickets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PossibleTickets"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.172"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="249dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/possibleTickets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Possible Tickets: "
-        app:layout_constraintEnd_toStartOf="@+id/textView7"
-        app:layout_constraintHorizontal_bias="0.792"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="319dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/lblPossibleTickets"
+        app:layout_constraintStart_toEndOf="@+id/lblPossibleTickets" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/lblMarginMin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text='"Insert Stuff"'
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="319dp" />
+        android:text="@string/Minimum"
+        app:layout_constraintBottom_toTopOf="@+id/inputMarginMin"
+        app:layout_constraintStart_toStartOf="@+id/inputMarginMin" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/lblMarginMax"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/editText6"
-        app:layout_constraintStart_toStartOf="@+id/editText6" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/editText7"
-        app:layout_constraintStart_toStartOf="@+id/editText7" />
+        android:text="@string/Maximum"
+        app:layout_constraintBottom_toTopOf="@+id/inputMarginMax"
+        app:layout_constraintStart_toStartOf="@+id/inputMarginMax" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

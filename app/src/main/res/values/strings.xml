@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">Assignment</string>
+    <string name="BtnCash">Pay with cash</string>
+    <string name="BtnSquare">Send to Square</string>
+    <string name="BtnUndosale">Undo last sale</string>
+    <string name="TitleSoldTickets">Sold Tickets</string>
+    <string name="RaffleName">Raffle #1</string>
+    <string name="SaleTotal">Total</string>
+    <string name="SaleValue">Value$20</string>
+    <string name="SalePrice">Ticket Price</string>
+    <string name="SaleQuantity">Quanity</string>
+    <string name="SaleName">Name</string>
+    <string name="SaleMobile">Mobile Number</string>
+    <string name="BackBtn"><![CDATA[< Back]]></string>
+    <string name="SellTickets">Sell Tickets</string>
+    <string name="ViewTickets">View Tickets</string>
+    <string name="EnterMargin">Enter a Winning Margin</string>
+    <string name="SelectTicket">Select a Winning Ticket</string>
+    <string name="RaffleSettings">Raffle Settings</string>
+    <string name="SoldTickets">"Tickets Sold: "</string>
+    <string name="RemainingTickets">"Remaining Tickets: "</string>
+    <string name="Zero">0</string>
+    <string name="RemainingNumber">0</string>
+    <string name="Title">RaffleApp</string>
+    <string name="EnterRaffleName">Enter a name for the raffle!</string>
+    <string name="lblTicketsText">Tickets Per Person (0 for Unlimited)</string>
+    <string name="lblMaximumText">Maximum Tickets (0 for Unlimited)</string>
+    <string name="btnConfirmText">Confirm</string>
+    <string name="Margin">Margin</string>
+    <string name="PossibleTickets">"Possible Tickets: "</string>
+    <string name="Minimum">Minimum</string>
+    <string name="Maximum">Maximum</string>
 </resources>
