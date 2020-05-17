@@ -94,7 +94,7 @@
         android:id="@+id/TicketsSold"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:text="@string/NumberSold"
+        android:text="@string/Zero"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toTopOf="@+id/textView10" />

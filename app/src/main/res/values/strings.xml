@@ -19,6 +19,15 @@
     <string name="RaffleSettings">Raffle Settings</string>
     <string name="SoldTickets">"Tickets Sold: "</string>
     <string name="RemainingTickets">"Remaining Tickets: "</string>
-    <string name="NumberSold">0</string>
+    <string name="Zero">0</string>
     <string name="RemainingNumber">0</string>
+    <string name="Title">RaffleApp</string>
+    <string name="EnterRaffleName">Enter a name for the raffle!</string>
+    <string name="lblTicketsText">Tickets Per Person (0 for Unlimited)</string>
+    <string name="lblMaximumText">Maximum Tickets (0 for Unlimited)</string>
+    <string name="btnConfirmText">Confirm</string>
+    <string name="Margin">Margin</string>
+    <string name="PossibleTickets">"Possible Tickets: "</string>
+    <string name="Minimum">Minimum</string>
+    <string name="Maximum">Maximum</string>
 </resources>
