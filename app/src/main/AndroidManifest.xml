@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RaffleList"></activity>
+        <activity
+            android:name=".RaffleList"
+            android:label="@string/app_name">
+        </activity>
         <activity android:name=".CustomerList" />
         <activity android:name=".SaleWindow" />
         <activity android:name=".RaffleMenu" />
@@ -22,5 +25,7 @@
             </intent-filter>
         </activity>
     </application>
+
+
 
 </manifest>

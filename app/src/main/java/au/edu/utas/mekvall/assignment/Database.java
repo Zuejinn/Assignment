@@ -11,10 +11,10 @@ import java.util.ArrayList;
 public class Database
 {
     //This is the tag that is used for the Logcat output (useful for filtering output)
-    private static final String TAG = "PropertyDatabase";
+    private static final String TAG = "RaffleDatabase";
 
     //The name of the database
-    private static final String DATABASE_NAME = "PropertyDatabase";
+    private static final String DATABASE_NAME = "RaffleDatabase";
 
     //The version of the database. Increment this whenever you change the /structure/ of the database
     private static final int   DATABASE_VERSION   = 2;

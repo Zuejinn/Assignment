@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import au.edu.utas.mekvall.assignment.Raffle;
 
 public class RaffleTable {
-    public static final String TABLE_NAME   ="property";
+    public static final String TABLE_NAME   ="Raffles";
     public static final String KEY_RAFFLE_ID   ="raffle_id";
     public static final String KEY_NAME   ="name";
 
@@ -17,7 +17,7 @@ public class RaffleTable {
             TABLE_NAME
             + "     ("
             + KEY_RAFFLE_ID + " integer primary key autoincrement, "
-            + KEY_NAME + " string not null, "
+            + KEY_NAME + " string not null"
             + ");";
 
     public static void insert(SQLiteDatabase db, Raffle r){

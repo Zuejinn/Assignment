@@ -20,7 +20,7 @@ public class RaffleList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_raffle_list);
 
         //Open the database, so that we can read and write
         Database databaseConnection = new Database(this);
@@ -47,8 +47,8 @@ public class RaffleList extends AppCompatActivity {
         }
         Log.d("ENTRIES ", "" + raffles.size());
 
-        final RaffleAdapter raffleAdapter =
-                new RaffleAdapter(getApplicationContext(), R.layout.my_list_item, raffles);
+        final RaffleAdapter raffleAdapter;
+        raffleAdapter = new RaffleAdapter(getApplicationContext(), R.layout.my_list_item, raffles);
         myList.setAdapter(raffleAdapter);
 
         myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

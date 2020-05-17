@@ -2,7 +2,7 @@ package au.edu.utas.mekvall.assignment;
 
 import android.app.Service;
 import android.content.Context;
-import android.util.Property;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,8 +28,8 @@ public class RaffleAdapter extends ArrayAdapter<Raffle> {
         LayoutInflater layoutInflater = (LayoutInflater)getContext().getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         View row = layoutInflater.inflate(mLayoutResourceID, parent, false);
         Raffle r = this.getItem(position);
-        TextView textView = row.findViewById(android.R.id.text1);
-        textView.setText(r.getmRaffleID() + ": " + r.getName());
+        TextView lblName = row.findViewById(R.id.lblName);
+        lblName.setText(r.getmRaffleID() + ": " + r.getName());
 
         return row;
     }
