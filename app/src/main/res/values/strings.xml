@@ -30,4 +30,8 @@
     <string name="PossibleTickets">"Possible Tickets: "</string>
     <string name="Minimum">Minimum</string>
     <string name="Maximum">Maximum</string>
+    <string name="ReturnMain">Return to Mainmenu</string>
+    <string name="Another">Add another raffle</string>
+    <string name="Success">Success!!!</string>
+    <string name="successMessage">You created a new raffle!!!</string>
 </resources>

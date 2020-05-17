@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RaffleList"></activity>
+        <activity android:name=".CreateRaffleConfirm"></activity>
+        <activity android:name=".RaffleList" />
         <activity android:name=".CustomerList" />
         <activity android:name=".SaleWindow" />
         <activity android:name=".RaffleMenu" />
