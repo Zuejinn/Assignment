@@ -19,6 +19,7 @@
         android:id="@+id/button2"
         android:layout_width="300dp"
         android:layout_height="150dp"
+        android:onClick="openRaffleList"
         android:text="Ongoing/Previous Raffles"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

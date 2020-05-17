@@ -4,4 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RaffleList"/>
+    tools:context="au.edu.utas.mekvall.assignment.RaffleList">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/myList" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

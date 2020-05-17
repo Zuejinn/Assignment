@@ -15,9 +15,9 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 
-public class RaffleAdapter extends ArrayAdapter<Property> {
+public class RaffleAdapter extends ArrayAdapter<Raffle> {
     private int mLayoutResourceID;
-    public RaffleAdapter(Context context, int resource, List<Property> objects){
+    public RaffleAdapter(Context context, int resource, List<Raffle> objects){
         super(context, resource, objects);
         this.mLayoutResourceID = resource;
     }
