@@ -28,11 +28,12 @@
 
 
         <Button
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
             android:id="@+id/button8"
             android:layout_width="220dp"
             android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:onClick="openTicketList"
             android:text="@string/ViewTickets"
             app:layout_constraintEnd_toEndOf="@+id/button9"
             app:layout_constraintTop_toBottomOf="@+id/button7" />

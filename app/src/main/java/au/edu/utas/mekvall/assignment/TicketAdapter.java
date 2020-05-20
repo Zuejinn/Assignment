@@ -11,12 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
-public class TicketAdapter extends ArrayAdapter<Raffle> {
+public class TicketAdapter extends ArrayAdapter<Ticket> {
     private int mLayoutResourceID;
-    public TicketAdapter(Context context, int resource, List<Raffle> objects){
+    public TicketAdapter(Context context, int resource, ArrayList<Ticket> objects){
         super(context, resource, objects);
         this.mLayoutResourceID = resource;
     }
@@ -26,9 +27,9 @@ public class TicketAdapter extends ArrayAdapter<Raffle> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater layoutInflater = (LayoutInflater)getContext().getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         View row = layoutInflater.inflate(mLayoutResourceID, parent, false);
-        Raffle r = this.getItem(position);
+        Ticket t = this.getItem(position);
         TextView lblName = row.findViewById(R.id.lblName);
-        lblName.setText(r.getmRaffleID() + ": " + r.getName());
+        lblName.setText(t.getmTicketID() + ": " + t.getName());
 
         return row;
     }

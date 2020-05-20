@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="au.edu.utas.mekvall.assignment.RaffleList">
+    tools:context="au.edu.utas.mekvall.assignment.TicketList">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -33,11 +33,15 @@
             android:layout_weight="20"
             android:text="Tickets Left" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="sdlfjsdfljk"/>
 
     </LinearLayout>
 
     <ListView
-        android:id="@+id/raffleListings"
+        android:id="@+id/ticketListings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/linearLayout">

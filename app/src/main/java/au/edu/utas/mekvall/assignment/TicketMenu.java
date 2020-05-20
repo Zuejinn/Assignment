@@ -1,13 +1,11 @@
 package au.edu.utas.mekvall.assignment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
-public class RaffleMenu extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class TicketMenu extends AppCompatActivity {
     private static Raffle current;
 
     public static Raffle getCurrent() {
@@ -25,9 +23,5 @@ public class RaffleMenu extends AppCompatActivity {
         setContentView(R.layout.activity_raffle_menu);
         TextView title = findViewById(R.id.inputRaffleName);
         setTitle("Menu: " + current.getName());
-    }
-
-    public void openTicketList(View view) {
-        startActivity(new Intent(RaffleMenu.this, TicketList.class));
     }
 }
