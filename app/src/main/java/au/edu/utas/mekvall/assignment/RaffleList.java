@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.InputType;
@@ -42,11 +43,6 @@ public class RaffleList extends AppCompatActivity {
 
         final ArrayList<Raffle> raffles = RaffleTable.selectAll(db);
 
-        for(int i = 0; i < raffles.size(); i++) {
-            Log.d("" + raffles.get(i).getmRaffleID(), raffles.get(i).getName());
-        }
-        Log.d("ENTRIES ", "" + raffles.size());
-
         final RaffleAdapter raffleAdapter;
         raffleAdapter = new RaffleAdapter(getApplicationContext(), R.layout.my_list_item, raffles);
         myList.setAdapter(raffleAdapter);
@@ -54,33 +50,11 @@ public class RaffleList extends AppCompatActivity {
         myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                final Raffle p = raffles.get(i);
-                AlertDialog.Builder builder = new AlertDialog.Builder(RaffleList.this);
-                builder.setTitle("Update Property Address");
+                final Raffle r = raffles.get(i);
 
-                final EditText input = new EditText(RaffleList.this);
-                input.setInputType(InputType.TYPE_CLASS_TEXT);
-                input.setText(p.getName());
-                builder.setView(input);
+                RaffleMenu.setCurrent(r);
+                startActivity(new Intent(RaffleList.this, RaffleMenu.class));
 
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-
-                builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        p.setName(input.getText().toString());
-
-                        RaffleTable.update(db, p);
-                        raffleAdapter.notifyDataSetChanged();
-                    }
-                });
-
-                builder.create().show();
             }
         });
     }
