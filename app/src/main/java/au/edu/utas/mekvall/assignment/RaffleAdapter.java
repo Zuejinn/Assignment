@@ -29,7 +29,7 @@ public class RaffleAdapter extends ArrayAdapter<Raffle> {
         View row = layoutInflater.inflate(mLayoutResourceID, parent, false);
         Raffle r = this.getItem(position);
         TextView lblName = row.findViewById(R.id.lblName);
-        lblName.setText(r.getmRaffleID() + ": " + r.getName());
+        lblName.setText(r.getName());
 
         return row;
     }

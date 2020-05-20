@@ -23,6 +23,8 @@ public class RaffleList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raffle_list);
 
+        setTitle("Raffle List");
+
         //Open the database, so that we can read and write
         Database databaseConnection = new Database(this);
         final SQLiteDatabase db = databaseConnection.open();
