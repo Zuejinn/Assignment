@@ -44,7 +44,7 @@ public class TicketList extends AppCompatActivity {
         TicketTable.insert(db, ticket2);
 
 
-        final ArrayList<Ticket> tickets = TicketTable.selectAll(db);
+        final ArrayList<Ticket> tickets = TicketTable.selectRaffleTickets(db, RaffleMenu.getCurrent());
 
         final TicketAdapter ticketAdapter;
         ticketAdapter = new TicketAdapter(getApplicationContext(), R.layout.ticket_listing, tickets);
@@ -56,7 +56,7 @@ public class TicketList extends AppCompatActivity {
                 final Ticket t = tickets.get(i);
 
                 //TicketMenu.setCurrent(t);
-                startActivity(new Intent(TicketList.this, TicketMenu.class));
+                //startActivity(new Intent(TicketList.this, TicketMenu.class));
 
             }
         });

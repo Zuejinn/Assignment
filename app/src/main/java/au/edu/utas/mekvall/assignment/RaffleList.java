@@ -34,6 +34,7 @@ public class RaffleList extends AppCompatActivity {
         raffle1.setDescription("Raffle for my boiz");
 
         Raffle raffle2 = new Raffle();
+        raffle2.setRaffleID(1);
         raffle2.setName("Carpet Raffle");
         raffle2.setDescription("Who wants some carpet????");
 

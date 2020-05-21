@@ -46,17 +46,20 @@ public class TicketTable {
         }
     }
 
-    public static ArrayList<Ticket> selectAll(SQLiteDatabase db){
+    public static ArrayList<Ticket> selectRaffleTickets(SQLiteDatabase db, Raffle r){
         ArrayList<Ticket> results = new ArrayList<Ticket>();
+        int raffleID = r.getmRaffleID();
 
-        Cursor c = db.query(TABLE_NAME, null, null, null, null, null, null);
+        Cursor c = db.query(TABLE_NAME, null, null , null, null, null, null);
 
         if (c != null) {
             c.moveToFirst();
 
             while (!c.isAfterLast()) {
                 Ticket t = createFromCursor(c);
-                results.add(t);
+                if(t.getRaffle_id() == raffleID) {
+                    results.add(t);
+                }
 
                 c.moveToNext();
             }
