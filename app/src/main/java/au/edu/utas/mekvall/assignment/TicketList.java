@@ -30,9 +30,15 @@ public class TicketList extends AppCompatActivity {
 
         Ticket ticket1 = new Ticket();
         ticket1.setName("Big Bash Charity Ticket");
+        ticket1.setRaffle_id(1);
+        ticket1.setName("Joe Wiz");
+        ticket1.setNumber(69);
 
         Ticket ticket2 = new Ticket();
         ticket2.setName("Carpet Ticket");
+        ticket2.setRaffle_id(1);
+        ticket2.setName("Elmer Fudd");
+        ticket2.setNumber(32);
 
         TicketTable.insert(db, ticket1);
         TicketTable.insert(db, ticket2);

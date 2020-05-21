@@ -16,6 +16,7 @@
 
         <activity android:name=".CreateRaffleConfirm"></activity>
         <activity android:name=".CustomerList" />
+        <activity android:name=".TicketList" />
         <activity android:name=".SaleWindow" />
         <activity android:name=".RaffleMenu" />
         <activity android:name=".NewRaffle" />

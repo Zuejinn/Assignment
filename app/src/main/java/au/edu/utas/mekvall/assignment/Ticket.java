@@ -4,6 +4,8 @@ public class Ticket {
     private int mTicketID;
     private String name;
     private int number;
+    private int raffle_id;
+    private int phone;
 
     public int getmTicketID() {
         return mTicketID;
@@ -29,12 +31,12 @@ public class Ticket {
         this.number = number;
     }
 
-    public int getRaffle() {
-        return raffle;
+    public int getRaffle_id() {
+        return raffle_id;
     }
 
-    public void setRaffle(int raffle) {
-        this.raffle = raffle;
+    public void setRaffle_id(int raffle_id) {
+        this.raffle_id = raffle_id;
     }
 
     public int getPhone() {
@@ -45,7 +47,5 @@ public class Ticket {
         this.phone = phone;
     }
 
-    private int raffle;
-    private int phone;
 
 }
