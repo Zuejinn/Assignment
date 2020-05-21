@@ -25,11 +25,14 @@ public class RaffleAdapter extends ArrayAdapter<Raffle> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater layoutInflater = (LayoutInflater)getContext().getSystemService(Service.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater layoutInflater =
+                (LayoutInflater)getContext().getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         View row = layoutInflater.inflate(mLayoutResourceID, parent, false);
         Raffle r = this.getItem(position);
         TextView lblName = row.findViewById(R.id.lblName);
         lblName.setText(r.getName());
+        TextView lblDesc = row.findViewById(R.id.lblDesc);
+        lblDesc.setText(r.getDescription());
 
         return row;
     }

@@ -12,17 +12,19 @@ public class RaffleTable {
     public static final String TABLE_NAME   ="Raffles";
     public static final String KEY_RAFFLE_ID   ="raffle_id";
     public static final String KEY_NAME   ="name";
+    public static final String KEY_DESC   ="desc";
 
-    public static final String CREATE_STATEMENT  = "CREATE TABLE " +
-            TABLE_NAME
-            + "     ("
+    public static final String CREATE_STATEMENT  = "CREATE TABLE "
+            + TABLE_NAME + "     ("
             + KEY_RAFFLE_ID + " integer primary key autoincrement, "
-            + KEY_NAME + " string not null"
+            + KEY_NAME + " string not null, "
+            + KEY_DESC + " string "
             + ");";
 
     public static void insert(SQLiteDatabase db, Raffle r){
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, r.getName());
+        values.put(KEY_DESC, r.getDescription());
 
         db.insert(TABLE_NAME, null, values);
     }
@@ -34,6 +36,7 @@ public class RaffleTable {
         else {
             Raffle r = new Raffle();
             r.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+            r.setDescription(c.getString(c.getColumnIndex(KEY_DESC)));
 
             return r;
         }
@@ -62,6 +65,7 @@ public class RaffleTable {
         ContentValues values = new ContentValues();
         values.put(KEY_RAFFLE_ID, r.getmRaffleID());
         values.put(KEY_NAME, r.getName());
+        values.put(KEY_DESC, r.getDescription());
 
         db.update(TABLE_NAME, values, KEY_RAFFLE_ID+"= ?",
                 new String[]{ "" + r.getmRaffleID()});

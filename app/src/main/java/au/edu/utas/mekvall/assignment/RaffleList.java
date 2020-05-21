@@ -24,18 +24,22 @@ public class RaffleList extends AppCompatActivity {
         Database databaseConnection = new Database(this);
         final SQLiteDatabase db = databaseConnection.open();
 
-
         //List parts!
         ListView myList = findViewById(R.id.raffleListings);
 
+        //db.execSQL("DELETE FROM Raffles");
+
         Raffle raffle1 = new Raffle();
         raffle1.setName("Big Bash Charity Raffle");
+        raffle1.setDescription("Raffle for my boiz");
 
         Raffle raffle2 = new Raffle();
         raffle2.setName("Carpet Raffle");
+        raffle2.setDescription("Who wants some carpet????");
 
         RaffleTable.insert(db, raffle1);
         RaffleTable.insert(db, raffle2);
+
 
 
         final ArrayList<Raffle> raffles = RaffleTable.selectAll(db);
