@@ -10,6 +10,8 @@ public class TicketTable {
     public static final String KEY_TICKET_ID   ="ticket_id";
     public static final String KEY_TICKET_NUM   ="number";
     public static final String KEY_NAME   = "name";
+    public static final String KEY_PHONE   = "phone";
+    public static final String KEY_WIN_PLACE = "win_place";
     public static final String KEY_FOREIGN = RaffleTable.KEY_RAFFLE_ID;
 
     public static final String CREATE_STATEMENT  = "CREATE TABLE " +
@@ -17,17 +19,20 @@ public class TicketTable {
             + "     ("
             + KEY_TICKET_ID + " integer primary key autoincrement, "
             + KEY_NAME + " string not null, "
+            + KEY_PHONE + " int, "
             + KEY_TICKET_NUM + " int, "
-            + KEY_FOREIGN + " int, " // REMOVED NOT NULL FOR DEBUG, ADD AGAIN!!
+            + KEY_WIN_PLACE + " int DEFAULT 0, "
+            + KEY_FOREIGN + " int not null, "
             + "FOREIGN KEY (" + KEY_FOREIGN + ") REFERENCES Raffles("
             + KEY_FOREIGN + ") "
             + ");";
 
-    public static void insert(SQLiteDatabase db, Ticket r){
+    public static void insert(SQLiteDatabase db, Ticket t){
         ContentValues values = new ContentValues();
-        values.put(KEY_NAME, r.getName());
-        values.put(KEY_FOREIGN, r.getRaffle_id());
-        values.put(KEY_TICKET_NUM, r.getNumber());
+        values.put(KEY_NAME, t.getName());
+        values.put(KEY_FOREIGN, t.getRaffle_id());
+        values.put(KEY_TICKET_NUM, t.getNumber());
+        values.put(KEY_PHONE, t.getPhone());
 
         db.insert(TABLE_NAME, null, values);
     }
@@ -37,12 +42,14 @@ public class TicketTable {
             return null;
         }
         else {
-            Ticket r = new Ticket();
-            r.setName(c.getString(c.getColumnIndex(KEY_NAME)));
-            r.setNumber(c.getInt(c.getColumnIndex(KEY_TICKET_NUM)));
-            r.setRaffle_id(c.getInt(c.getColumnIndex(KEY_FOREIGN)));
+            Ticket t = new Ticket();
+            t.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+            t.setNumber(c.getInt(c.getColumnIndex(KEY_TICKET_NUM)));
+            t.setWinner_place(c.getInt(c.getColumnIndex(KEY_WIN_PLACE)));
+            t.setRaffle_id(c.getInt(c.getColumnIndex(KEY_FOREIGN)));
+            t.setPhone(c.getInt(c.getColumnIndex(KEY_PHONE)));
 
-            return r;
+            return t;
         }
     }
 
@@ -74,6 +81,8 @@ public class TicketTable {
         values.put(KEY_NAME, t.getName());
         values.put(KEY_FOREIGN, t.getRaffle_id());
         values.put(KEY_TICKET_NUM, t.getNumber());
+        values.put(KEY_PHONE, t.getPhone());
+        values.put(KEY_WIN_PLACE, t.getWinner_place());
 
         db.update(TABLE_NAME, values, KEY_TICKET_ID+"= ?",
                 new String[]{ "" + t.getmTicketID()});

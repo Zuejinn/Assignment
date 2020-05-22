@@ -12,11 +12,13 @@ public class RaffleTable {
     public static final String KEY_RAFFLE_ID   ="raffle_id";
     public static final String KEY_NAME   ="name";
     public static final String KEY_DESC   ="desc";
+    public static final String KEY_WINNERS   ="winners";
 
     public static final String CREATE_STATEMENT  = "CREATE TABLE "
             + TABLE_NAME + "     ("
             + KEY_RAFFLE_ID + " integer primary key autoincrement not null, "
             + KEY_NAME + " string not null, "
+            + KEY_WINNERS + " int DEFAULT 0, "
             + KEY_DESC + " string "
             + ");";
 
@@ -38,6 +40,7 @@ public class RaffleTable {
             r.setName(c.getString(c.getColumnIndex(KEY_NAME)));
             r.setDescription(c.getString(c.getColumnIndex(KEY_DESC)));
             r.setRaffleID(c.getInt(c.getColumnIndex(KEY_RAFFLE_ID)));
+            r.setWinners(c.getInt(c.getColumnIndex(KEY_WINNERS)));
 
             return r;
         }
@@ -67,6 +70,7 @@ public class RaffleTable {
         values.put(KEY_RAFFLE_ID, r.getmRaffleID());
         values.put(KEY_NAME, r.getName());
         values.put(KEY_DESC, r.getDescription());
+        values.put(KEY_WINNERS, r.getWinners());
 
         db.update(TABLE_NAME, values, KEY_RAFFLE_ID+"= ?",
                 new String[]{ "" + r.getmRaffleID()});

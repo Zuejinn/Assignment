@@ -30,4 +30,8 @@ public class RaffleMenu extends AppCompatActivity {
     public void openTicketList(View view) {
         startActivity(new Intent(RaffleMenu.this, TicketList.class));
     }
+
+    public void drawWinner(View view) {
+        startActivity(new Intent(RaffleMenu.this, RandomWinner.class));
+    }
 }

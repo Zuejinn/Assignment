@@ -20,6 +20,7 @@
         <activity android:name=".SaleWindow" />
         <activity android:name=".RaffleMenu" />
         <activity android:name=".NewRaffle" />
+        <activity android:name=".RandomWinner" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

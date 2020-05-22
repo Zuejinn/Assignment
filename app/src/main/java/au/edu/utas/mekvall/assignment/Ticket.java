@@ -6,7 +6,15 @@ public class Ticket {
     private int number;
     private int raffle_id;
     private int phone;
+    private int winner_place;
 
+    public int getWinner_place() {
+        return winner_place;
+    }
+
+    public void setWinner_place(int winner_place) {
+        this.winner_place = winner_place;
+    }
     public int getmTicketID() {
         return mTicketID;
     }

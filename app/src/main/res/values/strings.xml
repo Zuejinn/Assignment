@@ -15,7 +15,7 @@
     <string name="SellTickets">Sell Tickets</string>
     <string name="ViewTickets">View Tickets</string>
     <string name="EnterMargin">Enter a Winning Margin</string>
-    <string name="SelectTicket">Select a Winning Ticket</string>
+    <string name="SelectTicket">Draw a Winner</string>
     <string name="RaffleSettings">Raffle Settings</string>
     <string name="SoldTickets">"Tickets Sold: "</string>
     <string name="RemainingTickets">"Remaining Tickets: "</string>
@@ -34,4 +34,7 @@
     <string name="Another">Add another raffle</string>
     <string name="Success">Success!!!</string>
     <string name="successMessage">You created a new raffle!!!</string>
+
+    <string name="winnerTitle">Winner:</string>
+    <string name="winnerText">The winner has been notified via text message</string>
 </resources>

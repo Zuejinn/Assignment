@@ -4,8 +4,16 @@ public class Raffle {
     private int mRaffleID;
     private String name;
     private String description;
-    // List of tickets needed
-    
+    private int winners;
+
+    public int getWinners() {
+        return winners;
+    }
+
+    public void setWinners(int winners) {
+        this.winners = winners;
+    }
+
     public int getmRaffleID() {
         return mRaffleID;
     }
