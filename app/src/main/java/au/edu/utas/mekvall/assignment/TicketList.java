@@ -30,7 +30,7 @@ public class TicketList extends AppCompatActivity {
 
         Ticket ticket1 = new Ticket();
         ticket1.setName("Big Bash Charity Ticket");
-        ticket1.setRaffle_id(2);
+        ticket1.setRaffle_id(1);
         ticket1.setName("Joe Wiz");
         ticket1.setNumber(69);
 

@@ -34,14 +34,11 @@ public class RaffleList extends AppCompatActivity {
         raffle1.setDescription("Raffle for my boiz");
 
         Raffle raffle2 = new Raffle();
-        raffle2.setRaffleID(1);
         raffle2.setName("Carpet Raffle");
         raffle2.setDescription("Who wants some carpet????");
 
         RaffleTable.insert(db, raffle1);
         RaffleTable.insert(db, raffle2);
-
-
 
         final ArrayList<Raffle> raffles = RaffleTable.selectAll(db);
 
