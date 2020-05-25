@@ -58,10 +58,11 @@
             app:layout_constraintTop_toBottomOf="@+id/button9" />
 
         <Button
-            android:id="@+id/button11"
+            android:id="@+id/btnRaffleSettings"
             android:layout_width="220dp"
             android:layout_height="75dp"
             android:text="@string/RaffleSettings"
+            android:onClick="openRaffleSettings"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.544"

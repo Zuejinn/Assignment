@@ -37,8 +37,8 @@ public class RaffleList extends AppCompatActivity {
         raffle2.setName("Carpet Raffle");
         raffle2.setDescription("Who wants some carpet????");
 
-        RaffleTable.insert(db, raffle1);
-        RaffleTable.insert(db, raffle2);
+        //RaffleTable.insert(db, raffle1);
+        //RaffleTable.insert(db, raffle2);
 
         final ArrayList<Raffle> raffles = RaffleTable.selectAll(db);
 

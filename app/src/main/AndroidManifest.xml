@@ -21,6 +21,7 @@
         <activity android:name=".RaffleMenu" />
         <activity android:name=".NewRaffle" />
         <activity android:name=".RandomWinner" />
+        <activity android:name=".RaffleSettings" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

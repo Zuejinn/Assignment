@@ -65,6 +65,13 @@ public class RaffleTable {
         return results;
     }
 
+    public static void delete(SQLiteDatabase db, Raffle r) {
+        String sel = KEY_RAFFLE_ID+"=?";
+        int del = db.delete(TABLE_NAME, sel, new String[]{"" + r.getmRaffleID()});
+        Log.d("DELETED: ","" + del);
+    }
+
+
     public static void update(SQLiteDatabase db, Raffle r) {
         ContentValues values = new ContentValues();
         values.put(KEY_RAFFLE_ID, r.getmRaffleID());
@@ -72,7 +79,6 @@ public class RaffleTable {
         values.put(KEY_DESC, r.getDescription());
         values.put(KEY_WINNERS, r.getWinners());
 
-        db.update(TABLE_NAME, values, KEY_RAFFLE_ID+"= ?",
-                new String[]{ "" + r.getmRaffleID()});
+        db.update(TABLE_NAME, values, KEY_RAFFLE_ID+"= ?", new String[]{ "" + r.getmRaffleID()});
     }
 }
