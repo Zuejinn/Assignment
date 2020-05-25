@@ -51,6 +51,7 @@ public class RaffleSettings extends AppCompatActivity {
         startActivity(new Intent(RaffleSettings.this, RaffleList.class));
     }
 
+    // Alert Dialogue
     public static class cantDelete extends DialogFragment {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
