@@ -1,0 +1,46 @@
+\documentclass[10pt,a4paper]{extarticle}
+\usepackage{titlesec}
+\usepackage[margin=.5in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{ulem}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[backend=bibtex]{biblatex}
+\usepackage{multicol}
+
+\graphicspath{{./images/}}
+\addbibresource{ref.bib}
+
+
+\titleformat{\section}
+{\huge \bfseries}
+{}
+{0em}
+{}
+
+
+\titleformat{\subsection}
+{\Large \bfseries}
+{} 
+{0em}
+{}
+
+\begin{document}
+\title{Assignment 2: Report}
+\author{Raymond Fraser (441630), Mikael Ekvall (419133)}
+\date{\today}
+\maketitle
+\newpage
+
+\section{Background}
+Sample \cite{bryant_2007} text \cite{hyoun_2017}
+\section{Description of the Application}
+\section{Usability Methodology}
+\section{Results}
+\section{Discussion}
+\section{Conclusion}
+
+\newpage
+\printbibliography[title={Bibliography}]
+\end{document}
