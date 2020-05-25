@@ -28,43 +28,51 @@
         android:id="@+id/inputRaffleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="96dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/lblDesc"
+    <EditText
+        android:id="@+id/inputTickets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/strDesc"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/inputDesc"
-        app:layout_constraintEnd_toEndOf="@+id/inputDesc"
-        app:layout_constraintStart_toStartOf="@+id/inputDesc" />
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.733" />
 
     <EditText
-        android:id="@+id/inputDesc"
+        android:id="@+id/inputMaximum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/inputRaffleName"
-        app:layout_constraintTop_toBottomOf="@+id/inputRaffleName" />
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputTickets" />
 
     <TextView
-        android:id="@+id/lblName"
+        android:id="@+id/lblTickets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/strRaffleName"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/inputRaffleName"
-        app:layout_constraintEnd_toEndOf="@+id/inputRaffleName"
-        app:layout_constraintStart_toStartOf="@+id/inputRaffleName" />
+        android:text="@string/lblTicketsText"
+        app:layout_constraintBottom_toTopOf="@+id/inputTickets"
+        app:layout_constraintStart_toStartOf="@+id/inputTickets" />
+
+    <TextView
+        android:id="@+id/lblMaximum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lblMaximumText"
+        app:layout_constraintBottom_toTopOf="@+id/inputMaximum"
+        app:layout_constraintStart_toStartOf="@+id/inputMaximum" />
 
     <Button
         android:id="@+id/btnConfirm"
@@ -75,7 +83,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-<<<<<<< Updated upstream
     <Switch
         android:id="@+id/switchMargin"
         android:layout_width="wrap_content"
@@ -144,7 +151,7 @@
         app:layout_constraintStart_toStartOf="@+id/inputMarginMax" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/lblName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/SaleName"
@@ -153,6 +160,3 @@
         app:layout_constraintEnd_toStartOf="@+id/inputRaffleName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-=======
-</androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> Stashed changes

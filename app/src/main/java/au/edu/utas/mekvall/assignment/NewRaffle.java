@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class NewRaffle extends AppCompatActivity {
-    public static String USERNAME_KEY = "USERNAME";
-    public static String RAFFLENAME_KEY = "RAFFLENAME";
+    public static String NAME_KEY = "RAFFLENAME";
+    public static String DESC_KEY = "DESC";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,25 +31,18 @@ public class NewRaffle extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 EditText inputRaffleName = findViewById(R.id.inputRaffleName);
-                EditText inputMarginMax = findViewById(R.id.inputMarginMax);
-                EditText inputMarginMin = findViewById(R.id.inputMarginMin);
-                EditText inputMaximum = findViewById(R.id.inputMaximum);
-                EditText inputTickets = findViewById(R.id.inputTickets);
-
                 String enteredName = inputRaffleName.getText().toString();
-                String enteredMarginMax = inputMarginMax.getText().toString();
-                String enteredMarginMin = inputMarginMin.getText().toString();
-                String enteredMaximum = inputMaximum.getText().toString();
-                String enteredTickets = inputTickets.getText().toString();
+                EditText inputDesc = findViewById(R.id.inputDesc);
+                String enteredDesc = inputDesc.getText().toString();
+
 
                 Intent i = new Intent(NewRaffle.this, CreateRaffleConfirm.class);
-                i.putExtra(RAFFLENAME_KEY, enteredName);
-                i.putExtra(USERNAME_KEY, enteredMarginMax);
-                i.putExtra(USERNAME_KEY, enteredMarginMin);
-                i.putExtra(USERNAME_KEY, enteredMaximum);
-                i.putExtra(USERNAME_KEY, enteredTickets);
+                i.putExtra(NAME_KEY, enteredName);
+                i.putExtra(DESC_KEY, enteredDesc);
                 startActivity(i);
             }
         });
+
+
     }
 }

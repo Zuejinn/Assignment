@@ -10,5 +10,36 @@ public class RaffleList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raffle_list);
+<<<<<<< Updated upstream
+=======
+
+        setTitle("Raffle List");
+
+        //Open the database, so that we can read and write
+        Database databaseConnection = new Database(this);
+        final SQLiteDatabase db = databaseConnection.open();
+
+        //List parts!
+        ListView myList = findViewById(R.id.raffleListings);
+
+        //db.execSQL("DELETE FROM Raffles");
+
+        final ArrayList<Raffle> raffles = RaffleTable.selectAll(db);
+
+        final RaffleAdapter raffleAdapter;
+        raffleAdapter = new RaffleAdapter(getApplicationContext(), R.layout.raffle_listing, raffles);
+        myList.setAdapter(raffleAdapter);
+
+        myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                final Raffle r = raffles.get(i);
+
+                RaffleMenu.setCurrent(r);
+                startActivity(new Intent(RaffleList.this, RaffleMenu.class));
+
+            }
+        });
+>>>>>>> Stashed changes
     }
 }

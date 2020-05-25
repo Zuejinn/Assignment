@@ -34,4 +34,11 @@
     <string name="Another">Add another raffle</string>
     <string name="Success">Success!!!</string>
     <string name="successMessage">You created a new raffle!!!</string>
+    <string name="StrOngoing">Ongoing/Previous Raffles</string>
+    <string name="StrNewRaffle">New Raffle</string>
+    <string name="StrLastRaffle">View Last Raffle</string>
+    <string name="strDesc">Description</string>
+    <string name="strRaffleName">Name of Raffle</string>
+    <string name="strPurchaseTickets">Purchase Tickets</string>
+    <string name="strTicketNumber">Ticket Number</string>
 </resources>
