@@ -37,4 +37,12 @@
 
     <string name="winnerTitle">Winner:</string>
     <string name="winnerText">The winner has been notified via text message</string>
+
+    <string name="StrOngoing">Ongoing/Previous Raffles</string>
+    <string name="StrNewRaffle">New Raffle</string>
+    <string name="StrLastRaffle">View Last Raffle</string>
+    <string name="strDesc">Description</string>
+    <string name="strRaffleName">Name of Raffle</string>
+    <string name="strPurchaseTickets">Purchase Tickets</string>
+    <string name="strTicketNumber">Ticket Number</string>
 </resources>

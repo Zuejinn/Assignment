@@ -10,14 +10,14 @@
         android:id="@+id/RaffleTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/RaffleName"
+        android:text="@string/Title"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/SaleBack"
+        android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/BackBtn"
@@ -28,126 +28,103 @@
 
     <TextView
         android:id="@+id/SalePriceLabel"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/SalePrice"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SaleBack" />
+        app:layout_constraintTop_toBottomOf="@+id/lblTicketNum" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:text="@string/SaleQuantity"
-        app:layout_constraintStart_toStartOf="@+id/SalePriceLabel"
-        app:layout_constraintTop_toBottomOf="@+id/SalePriceLabel" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strTicketNumber"
+        app:layout_constraintEnd_toEndOf="@+id/inputPrice"
+        app:layout_constraintStart_toStartOf="@+id/inputPrice"
+        app:layout_constraintTop_toBottomOf="@+id/inputPrice" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/SaleName"
-        app:layout_constraintStart_toStartOf="@+id/SalePriceLabel"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintEnd_toEndOf="@+id/inputNumber"
+        app:layout_constraintStart_toStartOf="@+id/inputNumber"
+        app:layout_constraintTop_toBottomOf="@+id/inputNumber" />
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/SaleMobile"
+        app:layout_constraintEnd_toEndOf="@+id/inputName"
+        app:layout_constraintStart_toStartOf="@+id/inputName"
+        app:layout_constraintTop_toBottomOf="@+id/inputName" />
+
+    <EditText
+        android:id="@+id/inputPrice"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/SalePriceLabel"
         app:layout_constraintStart_toStartOf="@+id/SalePriceLabel"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/SalePriceLabel" />
 
     <EditText
-        android:id="@+id/SalePrice"
+        android:id="@+id/inputNumber"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/SalePriceLabel"
-        app:layout_constraintStart_toEndOf="@+id/SalePriceLabel" />
+        app:layout_constraintEnd_toEndOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
-        android:id="@+id/SaleQuantity"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/textView11"
-        app:layout_constraintStart_toEndOf="@+id/textView11" />
-
-    <EditText
-        android:id="@+id/SaleName"
+        android:id="@+id/inputName"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/textView12"
-        app:layout_constraintStart_toEndOf="@+id/textView12" />
+        app:layout_constraintEnd_toEndOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <EditText
-        android:id="@+id/SaleMobileNumber"
+        android:id="@+id/inputMobile"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/textView13"
-        app:layout_constraintStart_toEndOf="@+id/textView13" />
+        app:layout_constraintEnd_toEndOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/lblCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:text="@string/SaleTotal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="236dp"
-        android:layout_marginLeft="236dp"
-        android:text="@string/SaleValue"
-        app:layout_constraintBottom_toBottomOf="@+id/textView14"
-        app:layout_constraintStart_toEndOf="@+id/textView14" />
+        app:layout_constraintBottom_toTopOf="@+id/btnPurchase"
+        app:layout_constraintEnd_toEndOf="@+id/btnPurchase"
+        app:layout_constraintStart_toStartOf="@+id/btnPurchase" />
 
     <Button
-        android:id="@+id/BtnSquare"
+        android:id="@+id/btnPurchase"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="340dp"
-        android:text="@string/BtnSquare"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/BtnCash"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="@string/BtnCash"
-        app:layout_constraintEnd_toEndOf="@+id/BtnSquare"
-        app:layout_constraintTop_toBottomOf="@+id/BtnSquare" />
-
-    <Button
-        android:id="@+id/BtnUndoSale"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="@string/BtnUndosale"
-        app:layout_constraintEnd_toEndOf="@+id/BtnCash"
-        app:layout_constraintTop_toBottomOf="@+id/BtnCash" />
+        android:text="@string/strPurchaseTickets"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView17"
+        app:layout_constraintEnd_toEndOf="@+id/textView17"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/inputMobile" />
 
     <ListView
         android:id="@+id/SaleTicketsList"
-        android:layout_width="409dp"
-        android:layout_height="193dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -161,5 +138,15 @@
         app:layout_constraintBottom_toTopOf="@id/SaleTicketsList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/lblTicketNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RaffleTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

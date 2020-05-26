@@ -10,38 +10,37 @@
         android:id="@+id/btnNewRaffleActivity"
         android:layout_width="300dp"
         android:layout_height="150dp"
-        android:text="New Raffle"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:text="@string/StrNewRaffle"
+        app:layout_constraintBottom_toTopOf="@+id/btnOngoing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnOngoing"
         android:layout_width="300dp"
         android:layout_height="150dp"
-        android:onClick="openRaffleList"
-        android:text="Ongoing/Previous Raffles"
+        android:text="@string/StrOngoing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnLastRaffle"
         android:layout_width="300dp"
         android:layout_height="150dp"
-        android:text="View Last Raffle"
+        android:text="@string/StrLastRaffle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnOngoing" />
 
     <TextView
 
-        android:id="@+id/textView"
+        android:id="@+id/lblTitleMainMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Raffle App"
+        android:text="@string/Title"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
