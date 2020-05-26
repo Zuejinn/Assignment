@@ -10,8 +10,12 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class TicketList extends AppCompatActivity {
+
+    private ArrayList<Ticket> tickets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,21 +34,21 @@ public class TicketList extends AppCompatActivity {
 
         Ticket ticket1 = new Ticket();
         ticket1.setName("Big Bash Charity Ticket");
-        ticket1.setRaffle_id(4);
+        ticket1.setRaffle_id(RaffleMenu.getCurrent().getmRaffleID());
         ticket1.setName("Joe Wiz");
-        ticket1.setNumber(69);
+        ticket1.setNumber(123);
 
         Ticket ticket2 = new Ticket();
         ticket2.setName("Carpet Ticket");
         ticket2.setRaffle_id(RaffleMenu.getCurrent().getmRaffleID());
         ticket2.setName("Elmer Fudd");
-        ticket2.setNumber(32);
+        ticket2.setNumber(1);
 
         TicketTable.insert(db, ticket1);
         TicketTable.insert(db, ticket2);
 
 
-        final ArrayList<Ticket> tickets = TicketTable.selectRaffleTickets(db, RaffleMenu.getCurrent());
+        tickets = TicketTable.selectRaffleTickets(db, RaffleMenu.getCurrent());
 
         final TicketAdapter ticketAdapter;
         ticketAdapter = new TicketAdapter(getApplicationContext(), R.layout.ticket_listing, tickets);
@@ -61,4 +65,41 @@ public class TicketList extends AppCompatActivity {
             }
         });
     }
+
+
+    public void sortName(View view) {
+        Collections.sort(tickets, new Comparator<Ticket>(){
+
+            @Override
+            public int compare(Ticket o1, Ticket o2) {
+                if (o1.getName().compareTo(o2.getName()) <= 0) {
+                    return -1;
+                } else return 1;
+            }
+        });
+        ListView myList = findViewById(R.id.ticketListings);
+        final TicketAdapter ticketAdapter;
+        ticketAdapter = new TicketAdapter(getApplicationContext(), R.layout.ticket_listing, tickets);
+        myList.setAdapter(ticketAdapter);
+        ticketAdapter.notifyDataSetChanged();
+    }
+
+    public void sortNum(View view) {
+        Collections.sort(tickets, new Comparator<Ticket>(){
+
+            @Override
+            public int compare(Ticket o1, Ticket o2) {
+                if (o1.getNumber() <= o2.getNumber()) {
+                    return -1;
+                } else return 1;
+            }
+        });
+        ListView myList = findViewById(R.id.ticketListings);
+        final TicketAdapter ticketAdapter;
+        ticketAdapter = new TicketAdapter(getApplicationContext(), R.layout.ticket_listing, tickets);
+        myList.setAdapter(ticketAdapter);
+        ticketAdapter.notifyDataSetChanged();
+    }
+
+
 }

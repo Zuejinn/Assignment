@@ -22,7 +22,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Raffle Name" />
+            android:text="Ticket Name" />
 
 
         <TextView
@@ -31,20 +31,46 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="20"
-            android:text="Tickets Left" />
+            android:text="Ticket Number" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="sdlfjsdfljk"/>
 
     </LinearLayout>
 
+    <RadioGroup
+        android:id="@+id/listRad"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Sort By:"></TextView>
+
+        <RadioButton
+            android:id="@+id/radName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="name"
+            android:onClick="sortName"/>
+
+        <RadioButton
+            android:onClick="sortNum"
+            android:id="@+id/radNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="number" />
+
+    </RadioGroup>
     <ListView
         android:id="@+id/ticketListings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@id/listRad">
 
     </ListView>
 

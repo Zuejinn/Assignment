@@ -6,7 +6,6 @@ Multiple winners per raffle
 Winner list
 Ticket sales
 More detail on raffle menu
-Some kind of filter for raffle menu
 Some kind of filter for ticket menu
 
 
