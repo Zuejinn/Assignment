@@ -1,11 +1,11 @@
 package au.edu.utas.mekvall.assignment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btnNewRaffleActivity = findViewById(R.id.btnNewRaffleActivity);
+        Button btnOngoing = findViewById(R.id.btnOngoing);
+        Button btnLastRaffle = findViewById(R.id.btnLastRaffle);
 
         btnNewRaffleActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,9 +25,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
+        btnOngoing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, RaffleList.class);
+                startActivity(i);
+            }
+        });
+
+        btnLastRaffle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, SaleWindow.class);
+                startActivity(i);
+            }
+        });
     }
 
-    public void openRaffleList(View view) {
-        startActivity(new Intent(MainActivity.this, RaffleList.class));
-    }
+
 }

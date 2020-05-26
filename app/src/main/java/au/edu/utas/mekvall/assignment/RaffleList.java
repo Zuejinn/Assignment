@@ -16,7 +16,6 @@ import java.util.Comparator;
 public class RaffleList extends AppCompatActivity {
 
     private ArrayList<Raffle> raffles;
-    private boolean newFirst = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,21 +31,7 @@ public class RaffleList extends AppCompatActivity {
         //List parts!
         ListView myList = findViewById(R.id.raffleListings);
 
-        //db.execSQL("DELETE FROM Raffles");
-
-        Raffle raffle1 = new Raffle();
-        raffle1.setName("Big Bash Charity Raffle");
-        raffle1.setDescription("Raffle for my boiz");
-
-        Raffle raffle2 = new Raffle();
-        raffle2.setName("Carpet Raffle");
-        raffle2.setDescription("Who wants some carpet????");
-
-        RaffleTable.insert(db, raffle1);
-        RaffleTable.insert(db, raffle2);
-
         raffles = RaffleTable.selectAll(db);
-        if (newFirst == false) Collections.reverse(raffles);
 
         final RaffleAdapter raffleAdapter;
         raffleAdapter = new RaffleAdapter(getApplicationContext(), R.layout.raffle_listing, raffles);
