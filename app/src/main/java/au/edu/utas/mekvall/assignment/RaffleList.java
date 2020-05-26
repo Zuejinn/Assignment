@@ -10,8 +10,12 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class RaffleList extends AppCompatActivity {
+
+    private ArrayList<Raffle> raffles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +31,7 @@ public class RaffleList extends AppCompatActivity {
         //List parts!
         ListView myList = findViewById(R.id.raffleListings);
 
-        //db.execSQL("DELETE FROM Raffles");
-
-        final ArrayList<Raffle> raffles = RaffleTable.selectAll(db);
+        raffles = RaffleTable.selectAll(db);
 
         final RaffleAdapter raffleAdapter;
         raffleAdapter = new RaffleAdapter(getApplicationContext(), R.layout.raffle_listing, raffles);
@@ -45,5 +47,39 @@ public class RaffleList extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void sortOld(View view) {
+        Collections.sort(raffles, new Comparator<Raffle>(){
+
+            @Override
+            public int compare(Raffle o1, Raffle o2) {
+                if (o1.getmRaffleID() >= o2.getmRaffleID()) {
+                    return -1;
+                } else return 1;
+            }
+        });
+        ListView myList = findViewById(R.id.raffleListings);
+        final RaffleAdapter raffleAdapter;
+        raffleAdapter = new RaffleAdapter(getApplicationContext(), R.layout.raffle_listing, raffles);
+        myList.setAdapter(raffleAdapter);
+        raffleAdapter.notifyDataSetChanged();
+    }
+
+    public void sortNew(View view) {
+        Collections.sort(raffles, new Comparator<Raffle>(){
+
+            @Override
+            public int compare(Raffle o1, Raffle o2) {
+                if (o1.getmRaffleID() >= o2.getmRaffleID()) {
+                    return 1;
+                } else return -1;
+            }
+        });
+        ListView myList = findViewById(R.id.raffleListings);
+        final RaffleAdapter raffleAdapter;
+        raffleAdapter = new RaffleAdapter(getApplicationContext(), R.layout.raffle_listing, raffles);
+        myList.setAdapter(raffleAdapter);
+        raffleAdapter.notifyDataSetChanged();
     }
 }

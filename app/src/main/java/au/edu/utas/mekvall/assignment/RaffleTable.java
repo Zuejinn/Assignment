@@ -68,7 +68,6 @@ public class RaffleTable {
     public static void delete(SQLiteDatabase db, Raffle r) {
         String sel = KEY_RAFFLE_ID+"=?";
         int del = db.delete(TABLE_NAME, sel, new String[]{"" + r.getmRaffleID()});
-        Log.d("DELETED: ","" + del);
     }
 
 

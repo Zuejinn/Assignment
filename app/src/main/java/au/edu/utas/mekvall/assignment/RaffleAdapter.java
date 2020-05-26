@@ -33,6 +33,7 @@ public class RaffleAdapter extends ArrayAdapter<Raffle> {
         TextView lblName = row.findViewById(R.id.lblName);
         lblName.setText(r.getName());
         lblName.setTextColor(Color.BLACK);
+        lblName.setText(r.getmRaffleID() + ": " + r.getName());//for testing
         TextView lblDesc = row.findViewById(R.id.lblDesc);
         lblDesc.setText(r.getDescription());
         lblDesc.setTextColor(Color.BLACK);
