@@ -3,6 +3,7 @@ package au.edu.utas.mekvall.assignment;
 import android.app.Service;
 import android.content.Context;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,8 +32,10 @@ public class RaffleAdapter extends ArrayAdapter<Raffle> {
         Raffle r = this.getItem(position);
         TextView lblName = row.findViewById(R.id.lblName);
         lblName.setText(r.getName());
+        lblName.setTextColor(Color.BLACK);
         TextView lblDesc = row.findViewById(R.id.lblDesc);
         lblDesc.setText(r.getDescription());
+        lblDesc.setTextColor(Color.BLACK);
 
         return row;
     }
