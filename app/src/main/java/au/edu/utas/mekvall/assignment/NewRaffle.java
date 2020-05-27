@@ -16,16 +16,10 @@ public class NewRaffle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_raffle);
-        Button btnBack = findViewById(R.id.btnBack);
-        Button btnConfirm = findViewById(R.id.btnConfirm);
+        setTitle("New Raffle");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(NewRaffle.this, MainActivity.class);
-                startActivity(i);
-            }
-        });
+        Button btnConfirm = findViewById(R.id.btnConfirm);
 
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override

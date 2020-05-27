@@ -23,6 +23,7 @@ public class RaffleList extends AppCompatActivity {
         setContentView(R.layout.activity_raffle_list);
 
         setTitle("Raffle List");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Open the database, so that we can read and write
         Database databaseConnection = new Database(this);

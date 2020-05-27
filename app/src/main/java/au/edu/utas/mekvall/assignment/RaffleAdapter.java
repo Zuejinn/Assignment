@@ -13,12 +13,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class RaffleAdapter extends ArrayAdapter<Raffle> {
     private int mLayoutResourceID;
-    public RaffleAdapter(Context context, int resource, List<Raffle> objects){
+    public RaffleAdapter(Context context, int resource, ArrayList<Raffle> objects){
         super(context, resource, objects);
         this.mLayoutResourceID = resource;
     }
@@ -26,8 +27,7 @@ public class RaffleAdapter extends ArrayAdapter<Raffle> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater layoutInflater =
-                (LayoutInflater)getContext().getSystemService(Service.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater layoutInflater = (LayoutInflater)getContext().getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         View row = layoutInflater.inflate(mLayoutResourceID, parent, false);
         Raffle r = this.getItem(position);
         TextView lblName = row.findViewById(R.id.lblName);

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateRaffleConfirm">
+    tools:context=".CreateSaleConfirm">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -34,12 +34,24 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/successMessage"
+            android:text="@string/strsuccessSale"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/lblEnteredName"
+            android:id="@+id/lblSaleName"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/lblSaleNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/lblSalePrice"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="36sp" />
     </LinearLayout>
@@ -64,7 +76,7 @@
             android:id="@+id/btnAnother"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Another"
+            android:text="@string/strAnotherSale"
             android:textSize="24sp" />
     </LinearLayout>
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Assignment</string>
+    <string name="app_name">Raffle App</string>
     <string name="BtnCash">Pay with cash</string>
     <string name="BtnSquare">Send to Square</string>
     <string name="BtnUndosale">Undo last sale</string>
@@ -45,4 +45,7 @@
     <string name="strRaffleName">Name of Raffle</string>
     <string name="strPurchaseTickets">Purchase Tickets</string>
     <string name="strTicketNumber">Ticket Number</string>
+    <string name="strHintDesc">Enter information about the raffle!</string>
+    <string name="strAnotherSale">Sell More Tickets</string>
+    <string name="strsuccessSale">You Purchased some Tickets!!!</string>
 </resources>

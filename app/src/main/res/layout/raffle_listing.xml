@@ -4,29 +4,26 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="10dp">
+        android:orientation="horizontal">
 
 
-            <TextView
-                android:id="@+id/lblName"
-                android:layout_gravity="center_vertical"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:text="Big Bash Charity Raffle"
-                />
+        <TextView
+            android:id="@+id/lblName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="Big Bash Charity Raffle" />
 
 
         <TextView
             android:id="@+id/lblID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1233"
-            android:layout_weight="20"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1" />
 
         <!-- delete button?-->
         <!--<ImageButton
@@ -37,13 +34,12 @@
             android:scaleX=".6"
             android:scaleY=".6"
             android:src="@android:drawable/ic_menu_close_clear_cancel"></ImageButton>-->
-        </LinearLayout>
+    </LinearLayout>
 
     <TextView
         android:id="@+id/lblDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="A raffle description"
-        android:layout_marginLeft="20dp"
-        android:textStyle="italic"/>
+        android:textStyle="italic" />
 </LinearLayout>

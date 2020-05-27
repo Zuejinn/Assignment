@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class RaffleMenu extends AppCompatActivity {
@@ -24,7 +26,19 @@ public class RaffleMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raffle_menu);
         TextView title = findViewById(R.id.inputRaffleName);
-        setTitle("Menu: " + current.getName());
+        setTitle("TicketSale: " + current.getName());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Button btnSalePage = findViewById(R.id.btnSalePage);
+
+        btnSalePage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SaleWindow.setCurrent(current);
+                Intent i = new Intent(RaffleMenu.this, SaleWindow.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void openTicketList(View view) {
@@ -38,4 +52,6 @@ public class RaffleMenu extends AppCompatActivity {
     public void openRaffleSettings(View view) {
         startActivity(new Intent(RaffleMenu.this, RaffleSettings.class));
     }
+
+
 }
