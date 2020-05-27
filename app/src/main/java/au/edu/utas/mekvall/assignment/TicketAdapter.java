@@ -29,7 +29,7 @@ public class TicketAdapter extends ArrayAdapter<Ticket> {
         View row = layoutInflater.inflate(mLayoutResourceID, parent, false);
         Ticket t = this.getItem(position);
         TextView lblName = row.findViewById(R.id.lblName);
-        lblName.setText(t.getRaffle_id() + ": " + t.getName());
+        lblName.setText(t.getmTicketID() + ": " + t.getName());
         TextView lblNum = row.findViewById(R.id.lblNum);
         lblNum.setText("" + t.getNumber());
 

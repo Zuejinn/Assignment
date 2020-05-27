@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -47,6 +48,8 @@ public class TicketList extends AppCompatActivity {
         TicketTable.insert(db, ticket1);
         TicketTable.insert(db, ticket2);
 
+        RadioButton radNum = findViewById(R.id.radNum);
+        radNum.toggle();
 
         tickets = TicketTable.selectRaffleTickets(db, RaffleMenu.getCurrent());
 
@@ -59,11 +62,12 @@ public class TicketList extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 final Ticket t = tickets.get(i);
 
-                //TicketMenu.setCurrent(t);
-                //startActivity(new Intent(TicketList.this, TicketMenu.class));
+                TicketMenu.setCurrent(t);
+                startActivity(new Intent(TicketList.this, TicketMenu.class));
 
             }
         });
+
     }
 
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RadioButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,6 +33,9 @@ public class RaffleList extends AppCompatActivity {
         ListView myList = findViewById(R.id.raffleListings);
 
         raffles = RaffleTable.selectAll(db);
+
+        RadioButton radNew = findViewById(R.id.radNewest);
+        radNew.toggle();
 
         final RaffleAdapter raffleAdapter;
         raffleAdapter = new RaffleAdapter(getApplicationContext(), R.layout.raffle_listing, raffles);

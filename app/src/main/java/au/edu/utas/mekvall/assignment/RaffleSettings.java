@@ -6,11 +6,14 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+
+import java.util.ArrayList;
 
 public class RaffleSettings extends AppCompatActivity {
     private static Raffle current;
@@ -28,6 +31,13 @@ public class RaffleSettings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raffle_settings);
+
+        Raffle r = RaffleMenu.getCurrent();
+        EditText editName = findViewById(R.id.editRaffleName);
+        EditText editDesc = findViewById(R.id.editRaffleDesc);
+
+        editName.setText(r.getName());
+        editDesc.setText(r.getDescription());
     }
 
     public void deleteRaffle(View view) {
@@ -63,6 +73,23 @@ public class RaffleSettings extends AppCompatActivity {
                     });
             return builder.create();
         }
+    }
+
+    public void saveRaffle(View v) {
+        Raffle r = RaffleMenu.getCurrent();
+
+        EditText editName = findViewById(R.id.editRaffleName);
+        EditText editDesc = findViewById(R.id.editRaffleDesc);
+
+        r.setName(editName.getText().toString());
+        r.setDescription(editDesc.getText().toString());
+
+        Database databaseConnection = new Database(this);
+        final SQLiteDatabase db = databaseConnection.open();
+        final ArrayList raffles = RaffleTable.selectAll(db);
+
+        RaffleTable.update(db, r);
+        openRaffleList(v);
     }
 
 

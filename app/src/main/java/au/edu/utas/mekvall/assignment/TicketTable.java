@@ -17,7 +17,7 @@ public class TicketTable {
     public static final String CREATE_STATEMENT  = "CREATE TABLE " +
             TABLE_NAME
             + "     ("
-            + KEY_TICKET_ID + " integer primary key autoincrement, "
+            + KEY_TICKET_ID + " integer primary key autoincrement not null, "
             + KEY_NAME + " string not null, "
             + KEY_PHONE + " int, "
             + KEY_TICKET_NUM + " int, "
@@ -43,6 +43,7 @@ public class TicketTable {
         }
         else {
             Ticket t = new Ticket();
+            t.setmTicketID(c.getInt(c.getColumnIndex(KEY_TICKET_ID)));
             t.setName(c.getString(c.getColumnIndex(KEY_NAME)));
             t.setNumber(c.getInt(c.getColumnIndex(KEY_TICKET_NUM)));
             t.setWinner_place(c.getInt(c.getColumnIndex(KEY_WIN_PLACE)));
