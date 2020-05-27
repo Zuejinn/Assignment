@@ -16,13 +16,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="Ticket Name" />
+            android:text="Ticket Name"
+            android:layout_weight="2"/>
 
 
         <TextView
@@ -30,9 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="20"
-            android:text="Ticket Number" />
-
+            android:text="Ticket Number"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 

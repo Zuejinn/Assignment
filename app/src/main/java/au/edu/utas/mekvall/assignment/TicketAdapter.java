@@ -2,6 +2,7 @@ package au.edu.utas.mekvall.assignment;
 
 import android.app.Service;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,8 +30,11 @@ public class TicketAdapter extends ArrayAdapter<Ticket> {
         View row = layoutInflater.inflate(mLayoutResourceID, parent, false);
         Ticket t = this.getItem(position);
         TextView lblName = row.findViewById(R.id.lblName);
-        lblName.setText(t.getmTicketID() + ": " + t.getName());
+
+        lblName.setTextColor(Color.BLACK);
+        lblName.setText(t.getRaffle_id() + ": " + t.getName());
         TextView lblNum = row.findViewById(R.id.lblNum);
+        lblNum.setTextColor(Color.BLACK);
         lblNum.setText("" + t.getNumber());
 
         return row;

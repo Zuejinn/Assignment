@@ -24,6 +24,7 @@ public class TicketList extends AppCompatActivity {
         setContentView(R.layout.activity_ticket_list);
 
         setTitle("Ticket List");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Open the database, so that we can read and write
         Database databaseConnection = new Database(this);

@@ -9,40 +9,58 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CreateRaffleConfirm extends AppCompatActivity {
+import java.util.Date;
+
+public class CreateSaleConfirm extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_raffle_confirm);
+        setContentView(R.layout.activity_create_sale_confirm);
         setTitle("Success!!!");
 
         //Open the database, so that we can read and write
         Database databaseConnection = new Database(this);
         final SQLiteDatabase db = databaseConnection.open();
 
-        TextView lblEnteredText = findViewById(R.id.lblEnteredName);
+        TextView lblSaleName = findViewById(R.id.lblSaleName);
+        TextView lblSaleNumber = findViewById(R.id.lblSaleNumber);
+        TextView lblSalePrice = findViewById(R.id.lblSalePrice);
 
         // Initilises the variables with the data user entered on the previous page
         Bundle extras = getIntent().getExtras();
-        String enteredName = extras.getString(NewRaffle.NAME_KEY);
-        String enteredDesc = extras.getString(NewRaffle.DESC_KEY);
+        String saleName = extras.getString(SaleWindow.SALENAME_KEY);
+        int saleNumber = extras.getInt(SaleWindow.SALENUM_KEY);
+        int saleMobile = extras.getInt(SaleWindow.SALEMOBILE_KEY);
+        int saleCost = extras.getInt(SaleWindow.SALECOST_KEY);
+        int saleRaffleID = extras.getInt(SaleWindow.SALERAFFLEID_KEY);
 
         // sets the title of the page to the new raffle's name
-        lblEnteredText.setText(enteredName);
+        lblSaleName.setText(saleName);
+        lblSaleNumber.setText(String.valueOf(saleNumber));
+        lblSalePrice.setText(String.valueOf(saleCost));
+
 
         // Enters the users data into the database
-        Raffle raffle = new Raffle();
-        raffle.setName(enteredName);
-        raffle.setDescription(enteredDesc);
-        RaffleTable.insert(db, raffle);
+        Ticket ticket = new Ticket();
+        Date date = new Date();
+
+        // Enters the users data into the database
+        ticket.setName(saleName);
+        ticket.setNumber(saleNumber);
+        ticket.setRaffle_id(saleRaffleID);
+        ticket.setPhone(saleMobile);
+        ticket.setDate(date);
+        ticket.setPrice(saleCost);
+
+        TicketTable.insert(db, ticket);
 
         // Return Button, returns to the main menu
         Button btnReturn = findViewById(R.id.btnReturn);
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(CreateRaffleConfirm.this, MainActivity.class);
+                Intent i = new Intent(CreateSaleConfirm.this, MainActivity.class);
                 startActivity(i);
             }
         });
@@ -52,7 +70,7 @@ public class CreateRaffleConfirm extends AppCompatActivity {
         btnAnother.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(CreateRaffleConfirm.this, NewRaffle.class);
+                Intent i = new Intent(CreateSaleConfirm.this, SaleWindow.class);
                 startActivity(i);
             }
         });

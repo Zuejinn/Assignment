@@ -9,20 +9,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".RaffleList"
-            android:label="@string/app_name">
-        </activity>
+        <activity android:name=".RaffleList"
+            android:label="@string/app_name"
+            android:parentActivityName=".MainActivity"
+            />
+        <activity android:name=".CreateRaffleConfirm"
 
-        <activity android:name=".CreateRaffleConfirm"></activity>
+            />
+        <activity android:name=".CreateSaleConfirm"
+
+            />
         <activity android:name=".CustomerList" />
-        <activity android:name=".TicketList" />
-        <activity android:name=".SaleWindow" />
-        <activity android:name=".RaffleMenu" />
-        <activity android:name=".NewRaffle" />
+        <activity android:name=".TicketList"
+            android:parentActivityName=".RaffleMenu"
+            />
+        <activity android:name=".SaleWindow"
+            android:parentActivityName=".RaffleMenu"
+            />
+        <activity android:name=".RaffleMenu"
+            android:parentActivityName=".RaffleList"
+            />
+        <activity android:name=".NewRaffle"
+            android:parentActivityName=".MainActivity"
+            />
         <activity android:name=".RandomWinner" />
-        <activity android:name=".RaffleSettings" />
         <activity android:name=".TicketMenu" />
+        <activity android:name=".RaffleSettings"
+            android:parentActivityName=".RaffleMenu"
+            />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
