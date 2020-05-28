@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class TicketTable {
     public static final String TABLE_NAME   ="Tickets";
@@ -12,6 +13,7 @@ public class TicketTable {
     public static final String KEY_NAME   = "name";
     public static final String KEY_PHONE   = "phone";
     public static final String KEY_WIN_PLACE = "win_place";
+    public static final String KEY_DATE = "date";
     public static final String KEY_FOREIGN = RaffleTable.KEY_RAFFLE_ID;
 
     public static final String CREATE_STATEMENT  = "CREATE TABLE " +
@@ -21,6 +23,7 @@ public class TicketTable {
             + KEY_NAME + " string not null, "
             + KEY_PHONE + " int, "
             + KEY_TICKET_NUM + " int, "
+            + KEY_DATE + " int not null, "
             + KEY_WIN_PLACE + " int DEFAULT 0, "
             + KEY_FOREIGN + " int not null, "
             + "FOREIGN KEY (" + KEY_FOREIGN + ") REFERENCES Raffles("
@@ -33,6 +36,7 @@ public class TicketTable {
         values.put(KEY_FOREIGN, t.getRaffle_id());
         values.put(KEY_TICKET_NUM, t.getNumber());
         values.put(KEY_PHONE, t.getPhone());
+        values.put(KEY_DATE, t.getDate());
 
         db.insert(TABLE_NAME, null, values);
     }
@@ -49,7 +53,7 @@ public class TicketTable {
             t.setWinner_place(c.getInt(c.getColumnIndex(KEY_WIN_PLACE)));
             t.setRaffle_id(c.getInt(c.getColumnIndex(KEY_FOREIGN)));
             t.setPhone(c.getInt(c.getColumnIndex(KEY_PHONE)));
-
+            t.setDate(c.getLong(c.getColumnIndex(KEY_DATE)));
             return t;
         }
     }
@@ -84,6 +88,7 @@ public class TicketTable {
         values.put(KEY_TICKET_NUM, t.getNumber());
         values.put(KEY_PHONE, t.getPhone());
         values.put(KEY_WIN_PLACE, t.getWinner_place());
+        values.put(KEY_DATE, t.getDate());
 
         db.update(TABLE_NAME, values, KEY_TICKET_ID+"= ?",
                 new String[]{ "" + t.getmTicketID()});

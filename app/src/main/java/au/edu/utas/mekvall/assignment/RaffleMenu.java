@@ -25,7 +25,6 @@ public class RaffleMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raffle_menu);
-        TextView title = findViewById(R.id.inputRaffleName);
         setTitle("TicketSale: " + current.getName());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

@@ -11,6 +11,7 @@ import android.widget.RadioButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -44,6 +45,7 @@ public class TicketList extends AppCompatActivity {
         ticket2.setName("Carpet Ticket");
         ticket2.setRaffle_id(RaffleMenu.getCurrent().getmRaffleID());
         ticket2.setName("Elmer Fudd");
+        ticket2.setDate(Calendar.getInstance().getTimeInMillis());
         ticket2.setNumber(1);
 
         TicketTable.insert(db, ticket1);

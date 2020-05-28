@@ -33,7 +33,7 @@ public class RandomWinner extends AppCompatActivity {
 
             Log.d("WIN INT: ", ""+win_ticket.getWinner_place());
             if(win_ticket.getWinner_place() == 0) {
-                win_ticket.setWinner_place(1); // NEEDS TO BE THE NEXT PLACE LATER ON
+                win_ticket.setWinner_place(1);
             }
         } while (win_ticket.getWinner_place() == 0);
 

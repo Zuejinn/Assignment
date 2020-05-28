@@ -34,6 +34,9 @@ public class TicketAdapter extends ArrayAdapter<Ticket> {
         lblName.setTextColor(Color.BLACK);
         lblName.setText(t.getRaffle_id() + ": " + t.getName());
         TextView lblNum = row.findViewById(R.id.lblNum);
+        TextView lblWin = row.findViewById(R.id.lblWinner);
+        if (t.getWinner_place() == 0) lblWin.setText("N");
+        else lblWin.setText("Y");
         lblNum.setTextColor(Color.BLACK);
         lblNum.setText("" + t.getNumber());
 
