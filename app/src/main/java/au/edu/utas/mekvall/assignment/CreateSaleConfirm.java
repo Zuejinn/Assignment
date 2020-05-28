@@ -3,12 +3,15 @@ package au.edu.utas.mekvall.assignment;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class CreateSaleConfirm extends AppCompatActivity {
@@ -47,12 +50,14 @@ public class CreateSaleConfirm extends AppCompatActivity {
         Ticket ticket = new Ticket();
         Date date = new Date();
 
+        long ms =  Calendar.getInstance().getTimeInMillis();
+
         // Enters the users data into the database
         ticket.setName(saleName);
 
         ticket.setRaffle_id(saleRaffleID);
         ticket.setPhone(saleMobile);
-        ticket.setDate(date);
+        ticket.setDate(ms);
         ticket.setPrice(saleCost);
         for (int i = 0; i < saleQuantity; i++) {
             ticket.setNumber(saleNumber + i);

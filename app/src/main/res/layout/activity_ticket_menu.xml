@@ -41,6 +41,50 @@
             android:textSize="10pt"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Purchase Date: "
+                android:textSize="10pt"/>
+
+            <TextView
+                android:id="@+id/lblTicketDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="1/1/2019"
+                android:textSize="10pt"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Winning Ticket: "
+                android:textSize="10pt"/>
+
+            <TextView
+                android:id="@+id/lblTicketWinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Yes"
+                android:textSize="10pt"/>
+        </LinearLayout>
+
+
+
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
@@ -56,6 +100,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
+            android:textSize="10pt"
             android:text="Name" />
 
         <TextView
@@ -70,6 +115,7 @@
             android:id="@+id/editTicketDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="10pt"
             android:ems="10"
             android:text="0455555555"
             android:inputType="number"

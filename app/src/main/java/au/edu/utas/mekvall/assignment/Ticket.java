@@ -1,5 +1,11 @@
 package au.edu.utas.mekvall.assignment;
 
+import android.icu.util.Calendar;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Ticket {
@@ -9,7 +15,7 @@ public class Ticket {
     private int raffle_id;
     private int phone;
     private int winner_place;
-    private Date date;
+    private long date;
     private int price;
 
     public int getWinner_place() {
@@ -62,8 +68,15 @@ public class Ticket {
     public int getPrice() { return this.price; }
     public void setPrice(int price) {this.price = price; }
 
-    public Date getDate() { return this.date; }
-    public void setDate(Date date) { this.date = date; }
-
+    public long getDate() { return this.date; }
+    public void setDate(long date) { this.date = date; }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    // c/o https://stackoverflow.com/posts/47900485/timeline
+    public String getDateString(){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(this.date);
+        return formatter.format(calendar.getTime());
+    }
 
 }
