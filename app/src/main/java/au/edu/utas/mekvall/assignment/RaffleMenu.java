@@ -25,7 +25,7 @@ public class RaffleMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raffle_menu);
-        setTitle("TicketSale: " + current.getName());
+        setTitle("Menu: " + current.getName());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Button btnSalePage = findViewById(R.id.btnSalePage);

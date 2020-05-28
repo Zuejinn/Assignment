@@ -7,13 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
-
-import java.util.ArrayList;
 
 public class RaffleSettings extends AppCompatActivity {
     private static Raffle current;
@@ -31,6 +28,7 @@ public class RaffleSettings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raffle_settings);
+        setTitle("Settings: " + RaffleMenu.getCurrent().getName());
 
         Raffle r = RaffleMenu.getCurrent();
         EditText editName = findViewById(R.id.editRaffleName);
@@ -52,13 +50,13 @@ public class RaffleSettings extends AppCompatActivity {
             delAlert.show(getSupportFragmentManager(), "Can't Delete");
         } else {
             RaffleTable.delete(db, r);
-            openRaffleList(view);
+            openRaffleMenu(view);
         }
 
     }
 
-    public void openRaffleList(View view) {
-        startActivity(new Intent(RaffleSettings.this, RaffleList.class));
+    public void openRaffleMenu(View view) {
+        startActivity(new Intent(RaffleSettings.this, RaffleMenu.class));
     }
 
     // Alert Dialogue
@@ -86,10 +84,9 @@ public class RaffleSettings extends AppCompatActivity {
 
         Database databaseConnection = new Database(this);
         final SQLiteDatabase db = databaseConnection.open();
-        final ArrayList raffles = RaffleTable.selectAll(db);
 
         RaffleTable.update(db, r);
-        openRaffleList(v);
+        openRaffleMenu(v);
     }
 
 

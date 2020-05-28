@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@android:color/darker_gray"
+        android:background="@color/colorPrimary"
         tools:layout_editor_absoluteX="20dp"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -23,12 +23,14 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:text="Ticket Name"
+            android:textColor="@android:color/white"
             android:layout_weight="2"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:textColor="@android:color/white"
             android:text="Winner?"
             android:layout_weight="1"/>
 
@@ -36,6 +38,7 @@
             android:id="@+id/lblID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
             android:layout_gravity="center_vertical"
             android:text="Ticket Number"
             android:layout_weight="1"/>
@@ -52,8 +55,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:text="Sort By:"></TextView>
 
         <RadioButton
@@ -65,18 +68,19 @@
             android:onClick="sortName"/>
 
         <RadioButton
+            android:onClick="sortWin"
+            android:id="@+id/radWin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="winner" />
+
+        <RadioButton
             android:onClick="sortNum"
             android:id="@+id/radNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="number" />
 
-        <RadioButton
-            android:onClick="sortWin"
-            android:id="@+id/radWin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="winner" />
 
     </RadioGroup>
     <ListView

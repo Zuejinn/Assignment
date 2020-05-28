@@ -13,6 +13,8 @@
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:text="Big Bash Charity Raffle"
+                android:layout_marginLeft="20dp"
+
                 />
 
 

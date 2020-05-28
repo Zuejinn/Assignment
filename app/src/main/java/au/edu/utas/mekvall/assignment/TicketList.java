@@ -24,7 +24,7 @@ public class TicketList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_list);
 
-        setTitle("Ticket List");
+        setTitle("Ticket List: " + RaffleMenu.getCurrent().getName());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Open the database, so that we can read and write

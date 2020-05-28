@@ -9,7 +9,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        >
 
 
         <TextView
@@ -40,6 +42,8 @@
 
     <TextView
         android:id="@+id/lblDesc"
+        android:layout_marginLeft="20dp"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="A raffle description"

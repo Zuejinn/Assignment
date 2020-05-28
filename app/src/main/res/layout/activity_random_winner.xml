@@ -13,6 +13,7 @@
         android:padding="40dp">
 
         <TextView
+            android:id="@+id/lblWinText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/winnerTitle"
@@ -25,17 +26,10 @@
             android:id="@+id/lblWinTickName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Place Holder"
         android:layout_gravity="center_horizontal"/>
 
         <TextView
-            android:id="@+id/lblWinTickNum"
-            android:layout_width="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_height="wrap_content"
-            android:text="#1"
-            android:layout_gravity="center_horizontal"/>
-        <TextView
+            android:id="@+id/lblWinDesc"
             android:layout_width="wrap_content"
             android:layout_marginBottom="20dp"
             android:layout_height="wrap_content"
