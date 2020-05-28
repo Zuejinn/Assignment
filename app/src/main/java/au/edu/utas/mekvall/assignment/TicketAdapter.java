@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class TicketAdapter extends ArrayAdapter<Ticket> {
@@ -29,10 +28,11 @@ public class TicketAdapter extends ArrayAdapter<Ticket> {
         LayoutInflater layoutInflater = (LayoutInflater)getContext().getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         View row = layoutInflater.inflate(mLayoutResourceID, parent, false);
         Ticket t = this.getItem(position);
-        TextView lblName = row.findViewById(R.id.lblName);
 
+        TextView lblName = row.findViewById(R.id.lblName);
         lblName.setTextColor(Color.BLACK);
         lblName.setText(t.getRaffle_id() + ": " + t.getName());
+
         TextView lblNum = row.findViewById(R.id.lblNum);
         lblNum.setTextColor(Color.BLACK);
         lblNum.setText("" + t.getNumber());

@@ -33,10 +33,10 @@ public class RaffleList extends AppCompatActivity {
         //List parts!
         ListView myList = findViewById(R.id.raffleListings);
 
-        raffles = RaffleTable.selectAll(db);
-
         RadioButton radNew = findViewById(R.id.radNewest);
         radNew.toggle();
+
+        raffles = RaffleTable.selectAll(db);
 
         final RaffleAdapter raffleAdapter;
         raffleAdapter = new RaffleAdapter(getApplicationContext(), R.layout.raffle_listing, raffles);

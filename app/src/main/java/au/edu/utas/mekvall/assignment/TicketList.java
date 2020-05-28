@@ -30,24 +30,8 @@ public class TicketList extends AppCompatActivity {
         Database databaseConnection = new Database(this);
         final SQLiteDatabase db = databaseConnection.open();
 
-
         //List parts!
         ListView ticketsList = findViewById(R.id.ticketListings);
-
-        Ticket ticket1 = new Ticket();
-        ticket1.setName("Big Bash Charity Ticket");
-        ticket1.setRaffle_id(RaffleMenu.getCurrent().getmRaffleID());
-        ticket1.setName("Joe Wiz");
-        ticket1.setNumber(123);
-
-        Ticket ticket2 = new Ticket();
-        ticket2.setName("Carpet Ticket");
-        ticket2.setRaffle_id(RaffleMenu.getCurrent().getmRaffleID());
-        ticket2.setName("Elmer Fudd");
-        ticket2.setNumber(1);
-
-        TicketTable.insert(db, ticket1);
-        TicketTable.insert(db, ticket2);
 
         RadioButton radNum = findViewById(R.id.radNum);
         radNum.toggle();
