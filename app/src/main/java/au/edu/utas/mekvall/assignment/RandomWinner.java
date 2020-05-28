@@ -17,6 +17,7 @@ public class RandomWinner extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_random_winner);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Database databaseConnection = new Database(this);
         final SQLiteDatabase db = databaseConnection.open();

@@ -21,6 +21,7 @@ public class CreateSaleConfirm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_sale_confirm);
         setTitle("Success!!!");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Open the database, so that we can read and write
         Database databaseConnection = new Database(this);
@@ -37,11 +38,12 @@ public class CreateSaleConfirm extends AppCompatActivity {
         int saleMobile = extras.getInt(SaleWindow.SALEMOBILE_KEY);
         int saleCost = extras.getInt(SaleWindow.SALECOST_KEY);
         int saleRaffleID = extras.getInt(SaleWindow.SALERAFFLEID_KEY);
+        int saleQuantity =extras.getInt(SaleWindow.SALEQUANTITY_KEY);
 
         // sets the title of the page to the new raffle's name
         lblSaleName.setText(saleName);
-        lblSaleNumber.setText(String.valueOf(saleNumber));
-        lblSalePrice.setText(String.valueOf(saleCost));
+        lblSaleNumber.setText("Ticket:" + String.valueOf(saleNumber));
+        lblSalePrice.setText("Total: $" + String.valueOf(saleCost));
 
 
         // Enters the users data into the database
@@ -52,13 +54,16 @@ public class CreateSaleConfirm extends AppCompatActivity {
 
         // Enters the users data into the database
         ticket.setName(saleName);
-        ticket.setNumber(saleNumber);
+
         ticket.setRaffle_id(saleRaffleID);
         ticket.setPhone(saleMobile);
         ticket.setDate(ms);
         ticket.setPrice(saleCost);
+        for (int i = 0; i < saleQuantity; i++) {
+            ticket.setNumber(saleNumber + i);
+            TicketTable.insert(db, ticket);
+        }
 
-        TicketTable.insert(db, ticket);
 
         // Return Button, returns to the main menu
         Button btnReturn = findViewById(R.id.btnReturn);

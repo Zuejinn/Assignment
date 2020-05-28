@@ -16,6 +16,7 @@ public class CreateRaffleConfirm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_raffle_confirm);
         setTitle("Success!!!");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Open the database, so that we can read and write
         Database databaseConnection = new Database(this);

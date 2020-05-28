@@ -14,12 +14,14 @@
             android:parentActivityName=".MainActivity"
             />
         <activity android:name=".CreateRaffleConfirm"
-
+            android:parentActivityName=".NewRaffle"
             />
         <activity android:name=".CreateSaleConfirm"
-
+            android:parentActivityName=".SaleWindow"
             />
-        <activity android:name=".CustomerList" />
+        <activity android:name=".CustomerList"
+            android:parentActivityName=".MainActivity"
+            />
         <activity android:name=".TicketList"
             android:parentActivityName=".RaffleMenu"
             />
@@ -32,8 +34,12 @@
         <activity android:name=".NewRaffle"
             android:parentActivityName=".MainActivity"
             />
-        <activity android:name=".RandomWinner" />
-        <activity android:name=".TicketMenu" />
+        <activity android:name=".RandomWinner"
+            android:parentActivityName=".RaffleMenu"
+            />
+        <activity android:name=".TicketMenu"
+            android:parentActivityName=".TicketList"
+            />
         <activity android:name=".RaffleSettings"
             android:parentActivityName=".RaffleMenu"
             />

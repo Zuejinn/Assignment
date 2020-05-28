@@ -30,6 +30,7 @@ public class TicketMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_menu);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView textNum = findViewById(R.id.lblTicketNum);
         TextView textWin = findViewById(R.id.lblTicketWinner);

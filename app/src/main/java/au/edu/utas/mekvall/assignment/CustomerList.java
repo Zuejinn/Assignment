@@ -10,5 +10,6 @@ public class CustomerList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_list);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

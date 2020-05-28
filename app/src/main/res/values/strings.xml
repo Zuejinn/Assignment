@@ -7,10 +7,10 @@
     <string name="RaffleName">Raffle #1</string>
     <string name="SaleTotal">Total</string>
     <string name="SaleValue">Value$20</string>
-    <string name="SalePrice">Ticket Price</string>
-    <string name="SaleQuantity">Quanity</string>
-    <string name="SaleName">Name</string>
-    <string name="SaleMobile">Mobile Number</string>
+    <string name="SalePrice">Enter Ticket Price...</string>
+    <string name="SaleQuantity">Enter Quantity...</string>
+    <string name="SaleName">Enter Customer Name...</string>
+    <string name="SaleMobile">Enter Customer Mobile No...</string>
     <string name="BackBtn"><![CDATA[< Back]]></string>
     <string name="SellTickets">Sell Tickets</string>
     <string name="ViewTickets">View Tickets</string>
@@ -22,7 +22,7 @@
     <string name="Zero">0</string>
     <string name="RemainingNumber">0</string>
     <string name="Title">RaffleApp</string>
-    <string name="EnterRaffleName">Enter a name for the raffle!</string>
+    <string name="EnterRaffleName">Enter Raffle Name...</string>
     <string name="lblTicketsText">Tickets Per Person (0 for Unlimited)</string>
     <string name="lblMaximumText">Maximum Tickets (0 for Unlimited)</string>
     <string name="btnConfirmText">Confirm</string>
@@ -44,8 +44,15 @@
     <string name="strDesc">Description</string>
     <string name="strRaffleName">Name of Raffle</string>
     <string name="strPurchaseTickets">Purchase Tickets</string>
-    <string name="strTicketNumber">Ticket Number</string>
-    <string name="strHintDesc">Enter information about the raffle!</string>
+    <string name="strTicketNumber">Enter Ticket Number</string>
+    <string name="strHintDesc">Enter Description...</string>
     <string name="strAnotherSale">Sell More Tickets</string>
     <string name="strsuccessSale">You Purchased some Tickets!!!</string>
+    <string name="strCustomerSale">Enter Customer Details:</string>
+    <string name="rafflePerson">Enter Organiser\'s Name...</string>
+    <string name="raffleLocation">Enter Location...</string>
+    <string name="raffleStart">Enter Start Date...</string>
+    <string name="raffleEnd">Enter End Date...</string>
+    <string name="raffleRequired">Required Fields:</string>
+    <string name="raffleOptional">Optional Fields:</string>
 </resources>
