@@ -30,6 +30,7 @@ public class CreateSaleConfirm extends AppCompatActivity {
         TextView lblSaleName = findViewById(R.id.lblSaleName);
         TextView lblSaleNumber = findViewById(R.id.lblSaleNumber);
         TextView lblSalePrice = findViewById(R.id.lblSalePrice);
+        TextView lblSaleMobile = findViewById(R.id.lblSaleMobile);
 
         // Initilises the variables with the data user entered on the previous page
         Bundle extras = getIntent().getExtras();
@@ -41,9 +42,10 @@ public class CreateSaleConfirm extends AppCompatActivity {
         int saleQuantity =extras.getInt(SaleWindow.SALEQUANTITY_KEY);
 
         // sets the title of the page to the new raffle's name
-        lblSaleName.setText(saleName);
-        lblSaleNumber.setText("Ticket:" + String.valueOf(saleNumber));
-        lblSalePrice.setText("Total: $" + String.valueOf(saleCost));
+        lblSaleName.setText("Customer Name: " + saleName);
+        lblSaleMobile.setText("Mobile Number: " + saleMobile);
+        lblSaleNumber.setText("Ticket: " + String.valueOf(saleNumber));
+        lblSalePrice.setText("Total: $" + String.valueOf(saleCost * saleQuantity));
 
 
         // Enters the users data into the database
@@ -63,17 +65,6 @@ public class CreateSaleConfirm extends AppCompatActivity {
             ticket.setNumber(saleNumber + i);
             TicketTable.insert(db, ticket);
         }
-
-
-        // Return Button, returns to the main menu
-        Button btnReturn = findViewById(R.id.btnReturn);
-        btnReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(CreateSaleConfirm.this, MainActivity.class);
-                startActivity(i);
-            }
-        });
 
         // New Raffle Button, Returns to the add raffle page to create a raffle
         Button btnAnother = findViewById(R.id.btnAnother);

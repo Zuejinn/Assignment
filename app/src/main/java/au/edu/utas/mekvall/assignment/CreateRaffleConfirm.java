@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class CreateRaffleConfirm extends AppCompatActivity {
 
     @Override
@@ -28,14 +30,38 @@ public class CreateRaffleConfirm extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String enteredName = extras.getString(NewRaffle.NAME_KEY);
         String enteredDesc = extras.getString(NewRaffle.DESC_KEY);
+        String[] commands = extras.getString(NewRaffle.COMMANDS_KEY).split(",");
 
         // sets the title of the page to the new raffle's name
-        lblEnteredText.setText(enteredName);
+        lblEnteredText.setText("Raffle: " + enteredName);
 
         // Enters the users data into the database
         Raffle raffle = new Raffle();
         raffle.setName(enteredName);
         raffle.setDescription(enteredDesc);
+        for (int i = 0; i < commands.length; i++) {
+            if (commands[i].equals("PERSON")) {
+                String person = extras.getString(NewRaffle.PERSON_KEY);
+                raffle.setPerson(person);
+            }
+            if (commands[i].equals("LOCATION")) {
+                String location = extras.getString(NewRaffle.LOCATION_KEY);
+                raffle.setLocation(location);
+            }
+            if (commands[i].equals("START")) {
+                long start = extras.getLong(NewRaffle.START_KEY);
+                raffle.setStart(start);
+            }
+            if (commands[i].equals("END")) {
+                long end = extras.getLong(NewRaffle.END_KEY);
+                raffle.setEnd(end);
+            }
+            if (commands[i].equals("MAX")) {
+                int max = extras.getInt(NewRaffle.MAX_KEY);
+                raffle.setMax(max);
+
+            }
+        }
         RaffleTable.insert(db, raffle);
 
         // Return Button, returns to the main menu

@@ -8,24 +8,40 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class RaffleTable {
-    public static final String TABLE_NAME   ="Raffles";
-    public static final String KEY_RAFFLE_ID   ="raffle_id";
-    public static final String KEY_NAME   ="name";
-    public static final String KEY_DESC   ="desc";
-    public static final String KEY_WINNERS   ="winners";
+    public static final String TABLE_NAME       ="Raffles";
+    public static final String KEY_RAFFLE_ID    ="raffle_id";
+    public static final String KEY_NAME         ="name";
+    public static final String KEY_DESC         ="desc";
+    public static final String KEY_WINNERS      ="winners";
+    public static final String KEY_PERSON       = "person";
+    public static final String KEY_LOCATION     = "location";
+    public static final String KEY_START        = "start";
+    public static final String KEY_END          = "end";
+    public static final String KEY_MAX          = "max";
+
 
     public static final String CREATE_STATEMENT  = "CREATE TABLE "
             + TABLE_NAME + "     ("
             + KEY_RAFFLE_ID + " integer primary key autoincrement not null, "
             + KEY_NAME + " string not null, "
             + KEY_WINNERS + " int DEFAULT 0, "
-            + KEY_DESC + " string "
+            + KEY_DESC + " string not null, "
+            + KEY_PERSON + " string, "
+            + KEY_LOCATION + " string, "
+            + KEY_START + " long, "
+            + KEY_END + " long, "
+            + KEY_MAX + " int DEFAULT 1000 "
             + ");";
 
     public static void insert(SQLiteDatabase db, Raffle r){
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, r.getName());
         values.put(KEY_DESC, r.getDescription());
+        values.put(KEY_PERSON, r.getPerson());
+        values.put(KEY_LOCATION, r.getLocation());
+        values.put(KEY_START, r.getStart());
+        values.put(KEY_END, r.getEnd());
+        values.put(KEY_MAX, r.getMax());
 
         db.insert(TABLE_NAME, null, values);
         Cursor c = db.rawQuery("SELECT * FROM Raffles", null);
@@ -41,6 +57,11 @@ public class RaffleTable {
             r.setDescription(c.getString(c.getColumnIndex(KEY_DESC)));
             r.setRaffleID(c.getInt(c.getColumnIndex(KEY_RAFFLE_ID)));
             r.setWinners(c.getInt(c.getColumnIndex(KEY_WINNERS)));
+            r.setPerson(c.getString(c.getColumnIndex(KEY_PERSON)));
+            r.setLocation(c.getString(c.getColumnIndex(KEY_LOCATION)));
+            r.setStart(c.getLong(c.getColumnIndex(KEY_START)));
+            r.setEnd(c.getLong(c.getColumnIndex(KEY_END)));
+            r.setMax(c.getInt(c.getColumnIndex(KEY_MAX)));
 
             return r;
         }
@@ -77,6 +98,11 @@ public class RaffleTable {
         values.put(KEY_NAME, r.getName());
         values.put(KEY_DESC, r.getDescription());
         values.put(KEY_WINNERS, r.getWinners());
+        values.put(KEY_PERSON, r.getPerson());
+        values.put(KEY_LOCATION, r.getLocation());
+        values.put(KEY_START, r.getStart());
+        values.put(KEY_END, r.getEnd());
+        values.put(KEY_MAX, r.getMax());
 
         db.update(TABLE_NAME, values, KEY_RAFFLE_ID+"= ?", new String[]{ "" + r.getmRaffleID()});
     }

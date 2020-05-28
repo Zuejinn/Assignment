@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnNewRaffleActivity = findViewById(R.id.btnNewRaffleActivity);
         Button btnOngoing = findViewById(R.id.btnOngoing);
-        Button btnLastRaffle = findViewById(R.id.btnLastRaffle);
 
         btnNewRaffleActivity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,13 +34,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnLastRaffle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, SaleWindow.class);
-                startActivity(i);
-            }
-        });
     }
 
 

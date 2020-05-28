@@ -40,14 +40,14 @@
 
     <string name="StrOngoing">Ongoing/Previous Raffles</string>
     <string name="StrNewRaffle">New Raffle</string>
-    <string name="StrLastRaffle">View Last Raffle</string>
+    <string name="StrLastRaffle">Settings</string>
     <string name="strDesc">Description</string>
     <string name="strRaffleName">Name of Raffle</string>
     <string name="strPurchaseTickets">Purchase Tickets</string>
     <string name="strTicketNumber">Enter Ticket Number</string>
     <string name="strHintDesc">Enter Description...</string>
-    <string name="strAnotherSale">Sell More Tickets</string>
-    <string name="strsuccessSale">You Purchased some Tickets!!!</string>
+    <string name="strAnotherSale">Dont Send</string>
+    <string name="strsuccessSale">Invoice for Tickets</string>
     <string name="strCustomerSale">Enter Customer Details:</string>
     <string name="rafflePerson">Enter Organiser\'s Name...</string>
     <string name="raffleLocation">Enter Location...</string>
@@ -55,4 +55,6 @@
     <string name="raffleEnd">Enter End Date...</string>
     <string name="raffleRequired">Required Fields:</string>
     <string name="raffleOptional">Optional Fields:</string>
+    <string name="btnSaleInvoice">Send Invoice</string>
+    <string name="raffleMaximumTickets">Enter Max Tickets..</string>
 </resources>

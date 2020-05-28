@@ -19,13 +19,17 @@ public class RaffleMenu extends AppCompatActivity {
     public static void setCurrent(Raffle r) {
         current = r;
     }
+    private TextView lblRemainingNumber;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raffle_menu);
-        setTitle("TicketSale: " + current.getName());
+        setTitle("Raffle: " + current.getName());
+        lblRemainingNumber = findViewById(R.id.lblRemainingNumber);
+        lblRemainingNumber.setText(String.valueOf(current.getMax()));
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Button btnSalePage = findViewById(R.id.btnSalePage);
