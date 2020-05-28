@@ -91,5 +91,22 @@ public class TicketList extends AppCompatActivity {
         ticketAdapter.notifyDataSetChanged();
     }
 
+    public void sortWin(View view) {
+        Collections.sort(tickets, new Comparator<Ticket>(){
+
+            @Override
+            public int compare(Ticket o1, Ticket o2) {
+                if (o1.getWinner_place() <= o2.getWinner_place()) {
+                    return 1;
+                } else return -1;
+            }
+        });
+        ListView myList = findViewById(R.id.ticketListings);
+        final TicketAdapter ticketAdapter;
+        ticketAdapter = new TicketAdapter(getApplicationContext(), R.layout.ticket_listing, tickets);
+        myList.setAdapter(ticketAdapter);
+        ticketAdapter.notifyDataSetChanged();
+    }
+
 
 }

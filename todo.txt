@@ -1,14 +1,11 @@
 TODO
 
-Editing Tickets
-Editing Raffles
-Multiple winners per raffle
-Winner list
-Ticket sales
-More detail on raffle menu
-Some kind of filter for ticket menu
+Raffle meta data
+sell multiple tickets
+max tickets per raffle
 
-
-Everything runs without data
-Margin raffle?
-Camera functionality?
+ADDITIONAL:
+Repeat customer handling
+Raffle icon/cover
+Sharing text dump of ticket
+Margin Raffle

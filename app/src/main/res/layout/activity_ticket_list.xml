@@ -71,6 +71,13 @@
             android:layout_height="wrap_content"
             android:text="number" />
 
+        <RadioButton
+            android:onClick="sortWin"
+            android:id="@+id/radWin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="winner" />
+
     </RadioGroup>
     <ListView
         android:id="@+id/ticketListings"
