@@ -41,7 +41,7 @@ public class TicketMenu extends AppCompatActivity {
         textNum.setText("" + current.getNumber());
         editName.setText(current.getName());
         editNumber.setText("" + current.getPhone());
-        textDate.setText(current.getDateString());
+        textDate.setText("" + current.getDateString());
         if (current.getWinner_place() == 0) textWin.setText("No");
         else textWin.setText("Yes");
     }

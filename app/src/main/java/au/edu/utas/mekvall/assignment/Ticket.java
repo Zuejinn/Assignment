@@ -1,11 +1,10 @@
 package au.edu.utas.mekvall.assignment;
 
-import android.icu.util.Calendar;
+
 import android.os.Build;
-
 import androidx.annotation.RequiresApi;
-
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Ticket {
