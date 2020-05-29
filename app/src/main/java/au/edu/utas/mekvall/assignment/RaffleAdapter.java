@@ -2,6 +2,7 @@ package au.edu.utas.mekvall.assignment;
 
 import android.app.Service;
 import android.content.Context;
+
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class RaffleAdapter extends ArrayAdapter<Raffle> {
@@ -28,12 +30,10 @@ public class RaffleAdapter extends ArrayAdapter<Raffle> {
         LayoutInflater layoutInflater = (LayoutInflater)getContext().getSystemService(Service.LAYOUT_INFLATER_SERVICE);
         View row = layoutInflater.inflate(mLayoutResourceID, parent, false);
         Raffle r = this.getItem(position);
-
         TextView lblName = row.findViewById(R.id.lblName);
         lblName.setText(r.getName());
         lblName.setTextColor(Color.BLACK);
-        lblName.setText(r.getmRaffleID() + ": " + r.getName());//for testing
-
+        lblName.setText(r.getName());
         TextView lblDesc = row.findViewById(R.id.lblDesc);
         lblDesc.setText(r.getDescription());
         lblDesc.setTextColor(Color.BLACK);
