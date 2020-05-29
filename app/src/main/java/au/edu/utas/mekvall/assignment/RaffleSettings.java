@@ -50,11 +50,13 @@ public class RaffleSettings extends AppCompatActivity {
             delAlert.show(getSupportFragmentManager(), "Can't Delete");
         } else {
             RaffleTable.delete(db, r);
-            openRaffleMenu(view);
+            openRaffleList(view);
         }
 
     }
-
+    public void openRaffleList(View view) {
+        startActivity(new Intent(RaffleSettings.this, RaffleList.class));
+    }
     public void openRaffleMenu(View view) {
         startActivity(new Intent(RaffleSettings.this, RaffleMenu.class));
     }

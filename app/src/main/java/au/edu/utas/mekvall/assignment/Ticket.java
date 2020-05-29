@@ -16,7 +16,7 @@ public class Ticket {
     private int phone;
     private int winner_place;
     private long date;
-    private int price;
+    private float price;
 
     public int getWinner_place() {
         return winner_place;
@@ -65,8 +65,8 @@ public class Ticket {
         this.phone = phone;
     }
 
-    public int getPrice() { return this.price; }
-    public void setPrice(int price) {this.price = price; }
+    public float getPrice() { return this.price; }
+    public void setPrice(float price) {this.price = price; }
 
     public long getDate() { return this.date; }
     public void setDate(long date) { this.date = date; }
