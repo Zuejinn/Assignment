@@ -86,6 +86,7 @@ public class SaleWindow extends AppCompatActivity {
         });
     }
 
+    // Reference: https://stackoverflow.com/questions/29672982/how-can-i-call-a-function-as-i-type-in-an-android-edittext
     private TextWatcher textWatcher = new TextWatcher() {
 
         @Override

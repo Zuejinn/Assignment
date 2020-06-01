@@ -104,6 +104,25 @@
                     android:hint="@string/raffleMaximumTickets"
                     android:inputType="number" />
 
+                <Button
+                    android:id="@+id/btnImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Enter Background Image" />
+
+                <ImageView
+                    android:id="@+id/SelectedImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="Image for stuff"
+                    android:maxWidth="100dp"
+                    android:maxHeight="100dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@android:drawable/gallery_thumb" />
+
             </LinearLayout>
 
             <LinearLayout

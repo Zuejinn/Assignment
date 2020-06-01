@@ -2,9 +2,7 @@ package au.edu.utas.mekvall.assignment;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class RaffleTable {
@@ -18,6 +16,7 @@ public class RaffleTable {
     public static final String KEY_START        = "start";
     public static final String KEY_END          = "end";
     public static final String KEY_MAX          = "max";
+    public static final String KEY_RAFFLING     = "raffling";
 
 
     public static final String CREATE_STATEMENT  = "CREATE TABLE "
@@ -30,6 +29,7 @@ public class RaffleTable {
             + KEY_LOCATION + " string, "
             + KEY_START + " long, "
             + KEY_END + " long, "
+            + KEY_RAFFLING + " string, "
             + KEY_MAX + " int DEFAULT 1000 "
             + ");";
 
@@ -42,6 +42,7 @@ public class RaffleTable {
         values.put(KEY_START, r.getStart());
         values.put(KEY_END, r.getEnd());
         values.put(KEY_MAX, r.getMax());
+        values.put(KEY_RAFFLING, r.getImageAddress());
 
         db.insert(TABLE_NAME, null, values);
         Cursor c = db.rawQuery("SELECT * FROM Raffles", null);
@@ -62,6 +63,7 @@ public class RaffleTable {
             r.setStart(c.getLong(c.getColumnIndex(KEY_START)));
             r.setEnd(c.getLong(c.getColumnIndex(KEY_END)));
             r.setMax(c.getInt(c.getColumnIndex(KEY_MAX)));
+            r.setImageAddress(c.getString(c.getColumnIndex(KEY_RAFFLING)));
 
             return r;
         }
@@ -103,6 +105,7 @@ public class RaffleTable {
         values.put(KEY_START, r.getStart());
         values.put(KEY_END, r.getEnd());
         values.put(KEY_MAX, r.getMax());
+        values.put(KEY_RAFFLING, r.getImageAddress());
 
         db.update(TABLE_NAME, values, KEY_RAFFLE_ID+"= ?", new String[]{ "" + r.getmRaffleID()});
     }

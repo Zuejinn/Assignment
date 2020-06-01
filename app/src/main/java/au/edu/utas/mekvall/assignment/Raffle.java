@@ -17,6 +17,11 @@ public class Raffle {
     private long start;
     private long end;
     private int max;
+    private String ImageAddress;
+
+    public String getImageAddress() { return ImageAddress; }
+
+    public void setImageAddress(String imageAddress) { ImageAddress = imageAddress; }
 
     public int getMax() { return max; }
 

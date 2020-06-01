@@ -57,4 +57,5 @@
     <string name="raffleOptional">Optional Fields:</string>
     <string name="btnSaleInvoice">Send Invoice</string>
     <string name="raffleMaximumTickets">Enter Max Tickets..</string>
+    <string name="strSendInvoice">Send Invoice? and Return to Ticket Sales</string>
 </resources>
