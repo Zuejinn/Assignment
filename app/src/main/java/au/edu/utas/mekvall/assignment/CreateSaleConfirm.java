@@ -84,7 +84,7 @@ public class CreateSaleConfirm extends AppCompatActivity {
             public void onClick(View view) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, saleName + "," + "Ticket " + String.valueOf(saleNumber) + ", $" + String.valueOf(saleCost) + ", Purchased " + date.toString());
+                sendIntent.putExtra(Intent.EXTRA_TEXT, saleName + "," + "Ticket " + String.valueOf(saleNumber) + " -> " + (saleNumber + saleQuantity) + ", Mobile: " + saleMobile + ", $" + String.valueOf(saleCost * saleQuantity) + ", Purchased " + date.toString());
                 sendIntent.setType("text/plain");
 
                 Intent shareIntent = Intent.createChooser(sendIntent, null);

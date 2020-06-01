@@ -18,7 +18,7 @@
     <string name="SelectTicket">Draw a Winner</string>
     <string name="RaffleSettings">Raffle Settings</string>
     <string name="SoldTickets">"Tickets Sold: "</string>
-    <string name="RemainingTickets">"Remaining Tickets: "</string>
+    <string name="RemainingTickets">"Maximum Tickets: "</string>
     <string name="Zero">0</string>
     <string name="RemainingNumber">0</string>
     <string name="Title">RaffleApp</string>
