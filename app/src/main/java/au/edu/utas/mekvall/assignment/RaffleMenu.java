@@ -42,16 +42,11 @@ public class RaffleMenu extends AppCompatActivity {
         lblRemainingNumber.setText(String.valueOf(current.getMax()));
         imageSelected = findViewById(R.id.imageViewRaffle);
 
-        String test = current.getImageAddress();
-        //Uri selectedImageUri = Uri.parse(test);
-
-        Uri fromFileImage = Uri.parse(test);
-        imageSelected.setImageURI(fromFileImage);
-
-
-
-
-
+        if (current.getImageAddress() != null) {
+            String test = current.getImageAddress();
+            Uri fromFileImage = Uri.parse(test);
+            imageSelected.setImageURI(fromFileImage);
+        }
 
         Button btnSalePage = findViewById(R.id.btnSalePage);
 
